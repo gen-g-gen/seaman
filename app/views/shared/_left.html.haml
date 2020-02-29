@@ -1,0 +1,14 @@
+.left
+  %ul
+    %li home
+    %li ポイント一覧
+    %li mypage
+    - if user_signed_in?
+      = "#{current_user.nickname}でログイン中"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      %li.header-menu__right-login
+        = link_to "ログイン", new_user_session_path
+      %li.header-menu__right-new
+        = link_to "新規登録", new_user_path
+  

@@ -1,14 +1,18 @@
 .left
   %ul
-    %li home
-    %li ポイント一覧
-    %li mypage
+    %li 
+      = link_to "home", root_path
+    %li 
+      = link_to "ポイント一覧", new_prefecture_path
+    %li 
     - if user_signed_in?
-      = "#{current_user.nickname}でログイン中"
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      %li
+        = "#{current_user.nickname}"
+      %li
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
     - else
       %li.header-menu__right-login
         = link_to "ログイン", new_user_session_path
       %li.header-menu__right-new
         = link_to "新規登録", new_user_path
-  
+

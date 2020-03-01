@@ -1,0 +1,17 @@
+
+  .map{
+    width:800px;
+    height: 100vh;
+    display:flex;
+    &__top{
+      height:50px;
+      width:100%;
+      background-color: gray;
+    }
+    #map-container {
+      
+      // height:500px;
+      
+    }
+    
+  }

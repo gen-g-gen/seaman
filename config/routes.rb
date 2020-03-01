@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   }
   
   root 'messages#index'
-  resources :messages, only: [:index, :new]
   resources :users, only: [:index, :new]
+  resources :prefectures, only: [:index, :new, :see] do
+    resources :messages, only: [:index, :new]
+    member do
+      get 'see'
+    end
+  end
+  
 
 end

@@ -38,6 +38,7 @@ $(function($){
             fontColor : "#4d4d4d",
             onSelect : function(data){
               num = data.code
+            //   console.log(data)
               link = ('prefectures'+'/' + num + '/' + 'see');
               location.pathname = link;
             }

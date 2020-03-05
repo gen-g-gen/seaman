@@ -47,7 +47,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :comments
-- has_many_active_hash :prefecture
+<!-- - has_many_active_hash :prefecture -->
 - has_many :messages
 
 ## pointテーブル
@@ -61,7 +61,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :comments
-- belongs_to_active_hash :prefecture
+<!-- - belongs_to_active_hash :prefecture -->
 
 ## messageテーブル
 |Column|Type|Options|

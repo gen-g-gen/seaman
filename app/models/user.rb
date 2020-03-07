@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
-  has_many :sns_credentials
-  has_many :user_points
-  has_many :points, through: :user_points
+  # has_many :sns_credentials
+  # has_many :user_points
+  # has_many :points, through: :user_points
 
 
   def self.from_omniauth(auth)

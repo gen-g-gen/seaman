@@ -14,7 +14,10 @@
 
 
 $(function($){
-    $(function(){        
+    $(function(){    
+        var w = $('#map').width();
+        $('#map-container').attr('width', w);
+        // console.log(w)
         var definition_of_english_name = {
             1 : "Hokkaido",   2 : "Aomori",     3 : "Iwate",     4 : "Miyagi",     5 : "Akita",
             6 : "Yamagata",   7 : "Fukushima",  8 : "Ibaraki",   9 : "Tochigi",   10 : "Gunma",
@@ -27,57 +30,27 @@ $(function($){
            41 : "Saga",      42 : "Nagasaki",  43 : "Kumamoto", 44 : "Oita",      45 : "Miyazaki",
            46 : "Kagoshima", 47 : "Okinawa"
        };
-        $("#map-container").japanMap({
-            
-            width: 800,
-            backgroundColor : "#0a0a33",
-            showsPrefectureName: false,
-            prefectureNameType: "short",
-            movesIslands : true,
-            fontSize : 11,
-            fontColor : "#4d4d4d",
-            onSelect : function(data){
-              num = data.code
-            //   console.log(data)
-              link = ('prefectures'+'/' + num + '/' + 'see');
-              location.pathname = link;
-            }
+        $("#map-container_lg").japanMap({
+            width: 450,
+                backgroundColor : "#0a0a33",
+                showsPrefectureName: false,
+                prefectureNameType: "short",
+                movesIslands : true,
+                fontSize : 11,
+                fontColor : "#4d4d4d",
+                onSelect : function(data){
+                num = data.code
+                link = ('prefectures'+'/' + num + '/' + 'see');
+                location.pathname = link;
+                }
         });
+       
     });
     
     $("#map-container").japanMap = function(options){
         var target = $(this);
-        
         for (var option in options)
             if (options.hasOwnProperty(option) && options[option] == null) options[option] = undefined;
-
-        // options = $.extend({
-        //     // type                : "canvas",       // Only type of "canvas" exist now. Perhaps "svg" in future.
-        //     // selection           : "prefecture",   // "prefecture" or "area"
-        //     // width               : null,           // Canvas will be scaled to larger one of "width" and "height".
-        //     // height              : null,
-        //     // color               : "#a0a0a0",      // Default color, which used if no color is set in "areas" object.
-        //     // hoverColor          : null,           // If null, "color" will be 20% brightened when hovered.
-        //     // backgroundColor     : "transparent",  // Background color of the element, like "canvas".
-        //     // // borderLineColor     : "#ffffff",      // Border Line of Prefectures.
-        //     // borderLineWidth     : 0.25,
-        //     // lineColor           : "#a0a0a0",      // Border Line of the element and the partition line when "movesIsland" is true.
-        //     // lineWidth           : 1,
-        //     // drawsBoxLine        : true,
-        //     // showsPrefectureName : false,
-        //     // prefectureNameType  : "full",
-        //     // showsAreaName       : false,
-        //     // areaNameType        : "full",
-        //     // areas               : definition_of_allJapan,
-        //     // prefectures         : definition_of_prefectures,
-        //     // movesIslands        : false,          //  Moves Nansei Islands (Okinawa and part of Kagishima) to the left-top space.
-        //     // font                : "Arial",
-        //     // fontSize            : null,
-        //     // fontColor           : null,
-        //     // fontShadowColor     : null,
-        //     // onSelect            : function(){},
-        //     // onHover             : function(){}
-        // }, options);
 
         var map;
         map = new MapCanvas(options);
@@ -368,7 +341,7 @@ $(function($){
         if (! available){
             throw "Your browser may not support CANVAS.";
         }
-        this.element = document.createElement("canvas");
+        this.element = document.createElement("");
         Map.apply(this, arguments);
 
         this.element.width  = this.size.width;

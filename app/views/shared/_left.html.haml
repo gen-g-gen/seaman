@@ -1,18 +1,34 @@
 .left
-  %ul
-    %li 
-      = link_to "home", root_path
-    %li 
-      = link_to "ポイント一覧", new_prefecture_path
-    %li 
-    - if user_signed_in?
-      %li
-        = "#{current_user.nickname}"
-      %li
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-    - else
-      %li.header-menu__right-login
-        = link_to "ログイン", new_user_session_path
-      %li.header-menu__right-new
-        = link_to "新規登録", new_user_path
-
+  #nav-drawer
+  %input#nav-input.nav-unshown{:type => "checkbox"}/
+  %label#nav-open{:for => "nav-input"}
+    %span
+  %label#nav-close.nav-unshown{:for => "nav-input"}
+  #nav-content 
+    %ul
+      %li 
+        = link_to root_path do
+          = icon('fas', 'home')
+          #none HOME
+      %li 
+        = link_to new_prefecture_path do
+          = icon('fas', 'map-marker-alt')
+          #none ポイント一覧
+      %li 
+        = link_to new_prefecture_path do
+          = icon('fab', 'osi')
+          #none 波予測
+      %li 
+        = link_to new_prefecture_path do
+          = icon('fas', 'search', class: "right__top__right__icon")
+          #none TOP検索
+      - if user_signed_in?
+        %li
+          = "#{current_user.nickname}"
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %li.header-menu__right-login
+          = link_to "ログイン", new_user_session_path
+        %li.header-menu__right-new
+          = link_to "新規登録", new_user_path

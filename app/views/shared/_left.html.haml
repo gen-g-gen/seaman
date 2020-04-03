@@ -1,4 +1,9 @@
 .left
+  %input#nav-input.nav-unshown{:type => "checkbox"}/
+  %label#nav-open{:for => "nav-input"}
+    %span
+  %label#nav-close.nav-unshown{:for => "nav-input"}
+
   #nav-content 
     %ul.nav-name
       %li.level0

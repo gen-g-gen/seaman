@@ -1,3 +1,536 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-unshown {
+  display:none;
+}
+// -------------------------------
+// pc
+// -------------------------------
+
+  .wrapper{
+    z-index:1;
+    width:100%;
+    height:100vh;
+    
+    background-color:#05051a;
+    color:#d8dfe6;
+    display: flex;
+    justify-content: center;
+    position:relative;
+
+    .left{
+      width:10%;
+      min-width: 170px;
+      font-size:10px;
+      height:100vh;
+      background-color:#0a0a33;
+
+    #nav-content{
+
+      .nav-name{
+        margin:auto;
+        font-size:20px;
+        margin-top: 50px;
+        text-decoration: none;
+        text-align:center;
+        
+      
+        a{
+          display:block;
+          margin:10px;
+          width: 150px;
+        }
+
+        .level0{
+          margin-bottom:25px;
+          width: 100%;
+          position: relative;
+         
+          &:hover {
+            position:relative;
+            bottom: 2px;
+            left:2px;
+            color:#ff6347;
+            
+          }
+          &:hover{
+            
+            .level1{
+              visibility: visible;
+              opacity: 0.8;
+              transition: 0.3s ;
+              
+            }
+          }
+
+          .level1{
+            width: 110px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 170px;
+            bottom:0;
+            overflow: scroll;
+            background-color: #1c4ee6;
+            z-index:10;
+            visibility: hidden;
+            opacity: 0;
+            transition-delay: 0.2s;
+            
+            .level2{
+              height:30px;
+              line-height:30px;
+              width:100px;
+              margin:5px;
+              font-size: 14px;
+              color:#d8dfe6;
+
+              &:hover {
+                position:relative;
+                bottom: 2px;
+                left:2px;
+                color:#ff6347;
+              }
+
+              &:hover{
+                .level3{
+                  visibility: visible;
+                  opacity: 1.0;
+                  transition: 0.3s;
+                  
+                }
+              }
+
+              .level3{
+                width: 120px;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 280px;
+                bottom:0;
+                overflow: scroll;
+                background-color: #1c4ee6;
+                font-size:14px;
+                z-index:10;
+                color:#d8dfe6;
+                visibility: hidden;
+                opacity: 0;
+                transition-delay: 0.2s;
+
+                .level4{
+                  height:30px;
+                  line-height:30px;
+                  margin:5px;
+                  font-size: 12px;
+                  color:#d8dfe6;
+                  &:hover {
+                    position:relative;
+                    bottom: 2px;
+                    left:2px;
+                    color:#ff6347;
+                   
+                  }
+                  &:hover{
+                    .level5{
+                      visibility: visible;
+                      opacity: 1.0;
+                      transition: 0.3s;  
+                      
+                    }
+                  }
+
+                  .level5{
+                    width: 100px;
+                    height: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 400px;
+                    bottom:0;
+                    overflow: scroll;
+                    background-color: #1c4ee6;
+                    font-size:14px;
+                    z-index:10;
+                    color:#d8dfe6;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition-delay: 0.2s;
+
+                    .level6{
+                      height:auto;
+                      line-height:auto;
+                      margin:3px;
+                      font-size: 14px;
+                      color:#d8dfe6;
+                      &:hover {
+                        position:relative;
+                        bottom: 2px;
+                        left:2px;
+                        color:#ff6347;
+                        
+                      }
+                      
+                    }
+                  }
+                }
+              }
+            }
+            
+          }
+        
+        }
+       
+        
+          a{
+            text-decoration: none;
+            color:#d8dfe6;
+            display: inline-flex;
+            line-height: 30px;
+
+            i{
+              line-height: 25px;
+              margin-right:10px;
+            }
+          }
+        }
+      }
+    }
+    .main{
+    width: 50%;
+    height:100vh;
+    overflow: scroll;
+    z-index:5;
+      &__top{
+        background-color:green ;
+        height:50px;
+        width:100%;
+      }
+      &__message{
+        padding-top:50px;
+        height:100%;
+        background-color:blue;
+        &__list{
+          
+          height:8%;
+          width:100%;
+          overflow: scroll;
+        }
+      }
+    }
+    .right{
+      z-index:5;
+      width: 40%;
+      height:100vh;
+      background-color:#0a0a33;
+      padding:0 10px;
+      border-left:1px #d8dfe65e solid;
+
+      &__top{
+        height:50px;
+        background-color:black;
+        border-radius: 100px;
+        line-height: 50px;
+        padding-left:20px;
+        padding-right:20px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid #d8dfe6;
+        &__left{
+          width:90%;
+          height:100%;
+          background-color:whitel
+        }
+        &__right{
+          width:10%;
+          height:100%;
+          
+          &__icon{
+            color:white;
+            cursor:pointer;
+          }
+        }
+      }
+      &__chart{
+        margin-top: 20px;
+        height: 100px;
+        border: 1px solid #d8dfe6;
+      }
+    }
+  }
+
+// -------------------------------
+// タブレット
+// -------------------------------
+@include md {
+  .wrapper{
+    width:100%;
+    height:100vh;
+    background-color:#05051a;
+    color:#d8dfe6;
+    display: flex;
+    justify-content: center;
+
+    .left{
+      display: flex;
+      justify-content: center;
+      width:10%;
+      min-width: 80px;
+      font-size:10px;
+      height:100vh;
+      background-color:#0a0a33;
+      #nav-content{
+        width:10%;
+        min-width: 80px;
+        .nav-name{
+          // margin:auto;
+          font-size:10px;
+          margin-top: 50px;
+          text-decoration: none;
+          text-align:center;
+        
+          .level0{
+            margin-bottom:10px;
+            width:10%;
+            min-width: 80px;
+  
+            a{
+              text-decoration: none;
+              color:#d8dfe6;
+              font-size:15px;
+              display: inline-block;
+              width:10%;
+              min-width: 80px;
+              margin:10px 0;
+              i{
+                font-size:20px;
+                margin:0px;
+              }
+              #none{
+                font-size:10px;
+                height: 10px;
+                line-height: 10px;
+              }
+            }
+            
+          }
+        }
+      }
+    }
+
+    .main{
+    width: 45%;
+    min-width: 300px;
+  
+    height:100vh;
+    // position:absolute;
+    overflow: scroll;
+    // left:27%;
+
+      &__top{
+        background-color:green ;
+        height:50px;
+        width:100%;
+      }
+      &__message{
+        padding-top:50px;
+        height:100%;
+        background-color:blue;
+        &__list{
+          
+          height:8%;
+          width:100%;
+          overflow: scroll;
+        }
+      }
+    }
+    .right{
+      width: 45%;
+      height:100vh;
+      background-color:#0a0a33;
+      padding:0 10px;
+      border-left:1px #d8dfe65e solid;
+
+      &__top{
+        height:50px;
+        background-color:black;
+        border-radius: 100px;
+        line-height: 50px;
+        padding-left:20px;
+        padding-right:20px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid #d8dfe6;
+        &__left{
+          width:90%;
+          height:100%;
+          background-color:whitel
+        }
+        &__right{
+          width:10%;
+          height:100%;
+          
+          &__icon{
+            color:white;
+            cursor:pointer;
+          }
+        }
+      }
+      &__chart{
+        margin-top: 20px;
+        height: 100px;
+        border: 1px solid #d8dfe6;
+      }
+    }
+  }
+}
+// -------------------------------
+// スマホ
+// -------------------------------
+@include sm{
+  .wrapper{
+    width:100%;
+    height:100vh;
+    background-color:#05051a;
+    color:#d8dfe6;
+    // display: flex;
+    // justify-content: center;
+
+    .left{
+
+
+    // ===================
+    // ハンバーガーメニュ
+    // ===================
+    position:absolute;
+    z-index:10;
+    top:10px;
+    right:10px;
+
+  #nav-drawer {
+    position: relative;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+  
+
+  // ===================
+  // ハンバーガーメニュ
+  // ===================
+
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width:10%;
+      min-width:65px;
+        ul li{ 
+        margin-bottom:15px;
+        a{
+          font-size:12px;
+        }
+        #none{
+          font-size:8px;
+          height: 10px;
+          line-height: 10px;
+        }
+      }
+    }
+    .main{
+    width: 90%;
+    min-width: 200px;
+    z-index: 5;
+    height:100vh;
+    // position:absolute;
+    overflow: scroll;
+    // left:27%;
+
+      &__top{
+        background-color:green ;
+        height:50px;
+        width:100%;
+      }
+      &__message{
+        padding-top:50px;
+        height:100%;
+        background-color:blue;
+        &__list{
+          
+          height:8%;
+          width:100%;
+          overflow: scroll;
+        }
+      }
+    }
+    .right{
+      display: none;
+    }
+  }
+}

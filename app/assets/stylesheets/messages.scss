@@ -16,23 +16,166 @@
 
     .left{
     
-    width: 15%;
+    width: 170px;
     min-width: 170px;
     height:100vh;
     background-color:#0a0a33;
 
-      ul{
-        margin:0 auto;
+    #nav-content{
+
+      .nav-name{
+        margin:auto;
         font-size:20px;
         margin-top: 50px;
         text-decoration: none;
         text-align:center;
         
+      
+        a{
+          display:block;
+          margin:10px;
+          width: 150px;
+        }
 
-        li{
+        .level0{
           margin-bottom:25px;
           width: 100%;
+          position: relative;
+         
+          &:hover {
+            position:relative;
+            bottom: 2px;
+            left:2px;
+            color:#ff6347;
+            
+          }
+          &:hover{
+            
+            .level1{
+              visibility: visible;
+              opacity: 0.8;
+              transition: 0.3s ;
+              
+            }
+          }
 
+          .level1{
+            width: 110px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 170px;
+            bottom:0;
+            overflow: scroll;
+            background-color: #1c4ee6;
+            z-index:10;
+            visibility: hidden;
+            opacity: 0;
+            transition-delay: 0.2s;
+            
+            .level2{
+              height:30px;
+              line-height:30px;
+              width:100px;
+              margin:5px;
+              font-size: 14px;
+              color:#d8dfe6;
+
+              &:hover {
+                position:relative;
+                bottom: 2px;
+                left:2px;
+                color:#ff6347;
+              }
+
+              &:hover{
+                .level3{
+                  visibility: visible;
+                  opacity: 1.0;
+                  transition: 0.3s;
+                  
+                }
+              }
+
+              .level3{
+                width: 120px;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 280px;
+                bottom:0;
+                overflow: scroll;
+                background-color: #1c4ee6;
+                font-size:14px;
+                z-index:10;
+                color:#d8dfe6;
+                visibility: hidden;
+                opacity: 0;
+                transition-delay: 0.2s;
+
+                .level4{
+                  height:30px;
+                  line-height:30px;
+                  margin:5px;
+                  font-size: 12px;
+                  color:#d8dfe6;
+                  &:hover {
+                    position:relative;
+                    bottom: 2px;
+                    left:2px;
+                    color:#ff6347;
+                   
+                  }
+                  &:hover{
+                    .level5{
+                      visibility: visible;
+                      opacity: 1.0;
+                      transition: 0.3s;  
+                      
+                    }
+                  }
+
+                  .level5{
+                    width: 100px;
+                    height: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 400px;
+                    bottom:0;
+                    overflow: scroll;
+                    background-color: #1c4ee6;
+                    font-size:14px;
+                    z-index:10;
+                    color:#d8dfe6;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition-delay: 0.2s;
+
+                    .level6{
+                      height:auto;
+                      line-height:auto;
+                      margin:3px;
+                      font-size: 14px;
+                      color:#d8dfe6;
+                      &:hover {
+                        position:relative;
+                        bottom: 2px;
+                        left:2px;
+                        color:#ff6347;
+                        
+                      }
+                      
+                    }
+                  }
+                }
+              }
+            }
+            
+          }
+        
+        }
+       
+        
           a{
             text-decoration: none;
             color:#d8dfe6;
@@ -49,12 +192,8 @@
     }
     .main{
     width: 50%;
-  
     height:100vh;
-    // position:absolute;
     overflow: scroll;
-    // left:27%;
-
       &__top{
         background-color:green ;
         height:50px;

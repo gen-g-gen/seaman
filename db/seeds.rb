@@ -163,3 +163,8 @@ saga_1.children.create([{name: "立神"},{name: "北浜"},{name: "東の浜"}])
 fukuoka = Point.create(name: "福岡")
 fukuoka_1 = fukuoka.children.create(name: "福岡エリア")
 fukuoka_1.children.create([{name: "芥屋"},{name: "野北"},{name: "大口"},{name: "二見ヶ浦"},{name: "奈多"},{name: "三苫"},{name: "新宮"},{name: "釣川河口"},{name: "さつき松原"},{name: "鐘崎"},{name: "インサイドボウル"},{name: "波津漁港"},{name: "汐入川"},{name: "芦屋"},{name: "洞山"},{name: "夏井ヶ浜"},{name: "サメ"},{name: "岩屋"},{name: "脇田"}])
+
+# 沖縄
+okinawa = Point.create(name: "沖縄")
+okinawa_1 = okinawa.children.create(name: "沖縄エリア")
+okinawa_1.children.create([{name: "安謝"},{name: "ボウル"},{name: "タートル"},{name: "残波"},{name: "真栄田"},{name: "部間"},{name: "コーチャン"},{name: "安波"},{name: "スーサイド"}])

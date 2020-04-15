@@ -1,13 +1,29 @@
 .main
   .main__top
+    %img.no1{src: "/assets/logo.png"}
   .main__message
-    .main__message__list
-      a
-    .main__message__list
-      i
-    .main__message__list
-      i
-    .main__message__list
-      i
-    .main__message__list
-      i
+    .tab-panel
+      %ul.tab-group
+        %li.tab.tab-A.is-active
+          大磯
+        %li.tab.tab-B
+          吉浜
+        %li.tab.tab-C
+          辻堂
+        %li.tab.tab-D
+          茅ヶ崎
+        %li.tab.tab-E
+          パーク
+      .panel-group
+        .panel.tab-A.is-show
+          大磯の波情報
+        .panel.tab-B
+          吉浜の波情報
+        .panel.tab-C
+          辻堂の波情報
+        .panel.tab-D
+          茅ヶ崎の波情報
+        .panel.tab-E
+          パークの波情報
+
+

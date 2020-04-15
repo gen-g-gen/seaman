@@ -4,17 +4,17 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   
-  root 'messages#index'
+  root 'prefectures#index'
   resources :users, only: [:index, :new]
   resources :waves, only: [:new] do
-    member do
-      get 'area'
-    end
+    # member do
+    #   get 'area'
+    # end
   end
-  resources :prefectures, only: [:index, :new, :see] do
-    resources :messages, only: [:index, :new]
-    member do
-      get 'see'
+  resources :prefectures, only: [:index] do
+    resources :areas, only: [:index, :new] do
+      resources :points, only: [:index, :new, :create, :show ]
+       
     end
   end
   

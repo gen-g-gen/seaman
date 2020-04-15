@@ -1,170 +1,2059 @@
+Prefecture.create!(
+  [
+    {
+      id: '1',
+      name: '北海道'
+    },
+    {
+      id: '2',
+      name: '青森'
+    },
+    {
+      id: '3',
+      name: '岩手'
+    },
+    {
+      id: '4',
+      name: '秋田'
+    },
+    {
+      id: '5',
+      name: '宮城'
+    },
+    {
+      id: '6',
+      name: '山形'
+    },
+    {
+      id: '7',
+      name: '新潟'
+    },
+    {
+      id: '8',
+      name: '石川'
+    },
+    {
+      id: '9',
+      name: '福島'
+    },
+    {
+      id: '10',
+      name: '茨城'
+    },
+    {
+      id: '11',
+      name: '千葉'
+    },
+    {
+      id: '12',
+      name: '神奈川'
+    },
+    {
+      id: '13',
+      name: '静岡'
+    },
+    {
+      id: '14',
+      name: '愛知'
+    },
+    {
+      id: '15',
+      name: '和歌山'
+    },
+    {
+      id: '16',
+      name: '福井'
+    },
+    {
+      id: '17',
+      name: '高知'
+    },
+    {
+      id: '18',
+      name: '徳島'
+    },
+    {
+      id: '19',
+      name: '島根'
+    },
+    {
+      id: '20',
+      name: '鳥取'
+    },
+    {
+      id: '21',
+      name: '宮崎'
+    },
+    {
+      id: '22',
+      name: '鹿児島'
+    },
+    {
+      id: '23',
+      name: '熊本'
+    },
+    {
+      id: '24',
+      name: '佐賀'
+    },
+    {
+      id: '25',
+      name: '福岡'
+    },
+    {
+      id: '26',
+      name: '沖縄'
+    }
+  ]
+)
 
-# 北海道
-hokkaido = Point.create(name: "北海道")
-hokkaido_1 = hokkaido.children.create(name: "道南エリア")
-hokkaido_1.children.create([{name: "鹿部"},{name: "女那川"},{name: "戸井"},{name: "中村下"},{name: "住吉"}])
-hokkaido_2 = hokkaido.children.create(name: "道央エリア")
-hokkaido_2.children.create([{name: "浜厚真"},{name: "白老"},{name: "イタンキ浜"},{name: "古平"},{name: "フゴッペ"},{name: "塩谷"},{name: "銭函"},{name: "東小樽"}])
+Area.create!(
+  [
+    {
+      id: '1',
+      name: '道南エリア',
+      prefecture_id: '1'
+    },
+    {
+      id: '2',
+      name: '道央エリア',
+      prefecture_id: '1'
+    },
+    {
+      id: '3',
+      name: '十和田/三沢エリア',
+      prefecture_id: '2'
+    },
+    {
+      id: '4',
+      name: '県北エリア',
+      prefecture_id: '2'
+    },
+    {
+      id: '5',
+      name: '県北エリア',
+      prefecture_id: '3'
+    },
+    {
+      id: '6',
+      name: '沿岸エリア',
+      prefecture_id: '3'
+    },
+    {
+      id: '7',
+      name: '秋田/由利エリア',
+      prefecture_id: '4'
+    },
+    {
+      id: '8',
+      name: '三陸エリア',
+      prefecture_id: '5'
+    },
+    {
+      id: '9',
+      name: '仙台エリア',
+      prefecture_id: '5'
+    },
+    {
+      id: '10',
+      name: '庄内エリア',
+      prefecture_id: '6'
+    },
+    {
+      id: '11',
+      name: '下越エリア',
+      prefecture_id: '7'
+    },
+    {
+      id: '12',
+      name: '新潟周辺エリア',
+      prefecture_id: '7'
+    },
+    {
+      id: '13',
+      name: '中越エリア',
+      prefecture_id: '7'
+    },
+    {
+      id: '14',
+      name: '上越エリア',
+      prefecture_id: '7'
+    },
+    {
+      id: '15',
+      name: '能登エリア',
+      prefecture_id: '8'
+    },
+    {
+      id: '16',
+      name: '加賀エリア',
+      prefecture_id: '8'
+    },
+    {
+      id: '17',
+      name: '相双エリア',
+      prefecture_id: '9'
+    },
+    {
+      id: '18',
+      name: 'いわきエリア',
+      prefecture_id: '9'
+    },
+    {
+      id: '19',
+      name: '県北エリア',
+      prefecture_id: '10'
+    },
+    {
+      id: '20',
+      name: '県央エリア',
+      prefecture_id: '10'
+    },
+    {
+      id: '21',
+      name: '鹿行エリア',
+      prefecture_id: '10'
+    },
+    {
+      id: '22',
+      name: '千葉北エリア',
+      prefecture_id: '11'
+    },
+    {
+      id: '23',
+      name: '千葉南エリア',
+      prefecture_id: '11'
+    },
+    {
+      id: '24',
+      name: '湘南エリア',
+      prefecture_id: '12'
+    },
+    {
+      id: '25',
+      name: '西湘エリア',
+      prefecture_id: '12'
+    },
+    {
+      id: '26',
+      name: '伊豆エリア',
+      prefecture_id: '13'
+    },
+    {
+      id: '27',
+      name: '新島エリア',
+      prefecture_id: '13'
+    },
+    {
+      id: '28',
+      name: '大島エリア',
+      prefecture_id: '13'
+    },
+    {
+      id: '29',
+      name: '静波/御前崎エリア',
+      prefecture_id: '13'
+    },
+    {
+      id: '30',
+      name: '磐田/浜松エリア',
+      prefecture_id: '13'
+    },
+    {
+      id: '31',
+      name: '伊良湖エリア',
+      prefecture_id: '14'
+    },
+    {
+      id: '32',
+      name: '磯ノ浦エリア',
+      prefecture_id: '15'
+    },
+    {
+      id: '33',
+      name: '南紀エリア',
+      prefecture_id: '15'
+    },
+    {
+      id: '34',
+      name: '伊勢エリア',
+      prefecture_id: '15'
+    },
+    {
+      id: '35',
+      name: '福井エリア',
+      prefecture_id: '16'
+    },
+    {
+      id: '36',
+      name: '高知エリア',
+      prefecture_id: '17'
+    },
+    {
+      id: '37',
+      name: '徳島エリア',
+      prefecture_id: '18'
+    },
+    {
+      id: '38',
+      name: '島根エリア',
+      prefecture_id: '19'
+    },
+    {
+      id: '39',
+      name: '鳥取エリア',
+      prefecture_id: '20'
+    },
+    {
+      id: '40',
+      name: '北部エリア',
+      prefecture_id: '21'
+    },
+    {
+      id: '41',
+      name: '南部エリア',
+      prefecture_id: '21'
+    },
+    {
+      id: '42',
+      name: '鹿児島エリア',
+      prefecture_id: '22'
+    },
+    {
+      id: '43',
+      name: '熊本エリア',
+      prefecture_id: '23'
+    },
+    {
+      id: '44',
+      name: '佐賀エリア',
+      prefecture_id: '24'
+    },
+    {
+      id: '45',
+      name: '福岡エリア',
+      prefecture_id: '25'
+    },
+    {
+      id: '46',
+      name: '沖縄エリア',
+      prefecture_id: '26'
+    }
+  ]
+)
 
-# 青森
-aomori = Point.create(name: "青森")
-aomori_1 = aomori.children.create(name: "十和田/三沢エリア")
-aomori_1.children.create([{name: "高瀬川"},{name: "三沢漁港"}])
-aomori_2 = aomori.children.create(name: "八戸エリア")
-aomori_2.children.create([{name: "大須賀"},{name: "種差"},{name: "大久喜"},{name: "金浜"}])
 
-# 岩手
-iwate = Point.create(name: "岩手")
-iwate_1 = iwate.children.create(name: "県北エリア")
-iwate_1.children.create([{name: "角の浜"},{name: "川尻"},{name: "大浜"},{name: "有家"},{name: "十府ヶ浦"},{name: "安家川"}])
-iwate_2 = iwate.children.create(name: "沿岸エリア")
-iwate_2.children.create([{name: "重茂"},{name: "浪板"},{name: "吉浜"},{name: "千丸"},{name: "門之浜"},{name: "米崎"},{name: "高田河口"}])
-
-# 秋田
-akita = Point.create(name: "秋田")
-akita_1 = akita.children.create(name: "秋田/由利エリア")
-akita_1.children.create([{name: "宮崎海岸"},{name: "船越"},{name: "出戸浜"},{name: "二古"},{name: "本荘浜"},{name: "西目"},{name: "三森"},{name: "小砂川"}])
-
-# 宮城
-miyagi = Point.create(name: "宮城")
-miyagi_1 = miyagi.children.create(name: "三陸エリア")
-miyagi_1.children.create([{name: "小泉海水浴場　河口"},{name: "小泉海水浴場　パレス前第2ポイント"},{name: "小泉海水浴場　パレス前第1ポイント"},{name: "本吉 ウニ浜ポイント"},{name: "本吉 石浜ポイント"},{name: "本吉 崖前ポイント"},{name: "長浜海水浴場ポイント"},{name: "大曲海岸"},{name: "浜市海岸"},{name: "野蒜"}])
-miyagi_2 = miyagi.children.create(name: "仙台エリア")
-miyagi_2.children.create([{name: "菖蒲田浜"},{name: "仙台新港"},{name: "蒲生"},{name: "深沼"},{name: "閖上"},{name: "荒浜"}])
-
-# 山形
-yamagata = Point.create(name: "山形")
-yamagata_1 = yamagata.children.create(name: "庄内エリア")
-yamagata_1.children.create([{name: "湯野浜"}])
-
-# 新潟
-niigata = Point.create(name: "新潟")
-niigata_1 = niigata.children.create(name: "下越エリア")
-niigata_1.children.create([{name: "東港"},{name: "島見"}])
-niigata_2 = niigata.children.create(name: "新潟周辺エリア")
-niigata_2.children.create([{name: "小針"},{name: "新川"},{name: "港漁港"},{name: "五ヶ浜"},{name: "白岩"},{name: "間瀬"},{name: "牛ちゃん"},{name: "寺泊"}])
-niigata_3 = niigata.children.create(name: "中越エリア")
-niigata_3.children.create([{name: "高浜"},{name: "大湊"},{name: "荒浜"},{name: "松波"},{name: "米山"}])
-niigata_4 = niigata.children.create(name: "上越エリア")
-niigata_4.children.create([{name: "郷津"},{name: "谷浜"},{name: "名立"},{name: "百川"}])
-
-# 石川
-ishikawa = Point.create(name: "石川")
-ishikawa_1 = ishikawa.children.create(name: "能登エリア")
-ishikawa_1.children.create([{name: "門前"},{name: "鹿頭"},{name: "柴垣"},{name: "滝"}])
-ishikawa_2 = ishikawa.children.create(name: "加賀エリア")
-ishikawa_2.children.create([{name: "大浜"},{name: "金石"},{name: "専光寺"},{name: "美川"},{name: "片野"},{name: "塩谷"}])
-
-# 福島
-fukushima = Point.create(name: "福島")
-fukushima_1 = fukushima.children.create(name: "相双エリア")
-fukushima_1.children.create([{name: "ラハイナ"},{name: "カゲスカ"},{name: "ブタ下"},{name: "右田浜"},{name: "鳥"},{name: "坂下"},{name: "北泉"},{name: "チキン下"},{name: "請戸"}])
-fukushima_2 = fukushima.children.create(name: "いわきエリア")
-fukushima_2.children.create([{name: "岩沢"},{name: "四倉"},{name: "二見が浦"},{name: "ウエストコースト"},{name: "勿来"}])
-
-# 茨城
-ibaraki = Point.create(name: "茨城")
-ibaraki_1 = ibaraki.children.create(name: "県北エリア")
-ibaraki_1.children.create([{name: "二つ島"},{name: "川尻"},{name: "日立駅下"},{name: "河原子"},{name: "日立灯台下"}])
-ibaraki_2 = ibaraki.children.create(name: "県央エリア")
-ibaraki_2.children.create([{name: "阿字ケ浦"},{name: "大洗"},{name: "大貫"}])
-ibaraki_3 = ibaraki.children.create(name: "鹿行エリア")
-ibaraki_3.children.create([{name: "京知釜"},{name: "とっぷさんて"},{name: "波崎"}])
-
-# 千葉
-chiba = Point.create(name: "千葉")
-chiba_1 = chiba.children.create(name: "千葉北エリア")
-chiba_1.children.create([{name: "飯岡"},{name: "吉崎"},{name: "作田"},{name: "片貝漁港"},{name: "片貝新堤"},{name: "豊海"},{name: "白里"},{name: "白子"},{name: "一松"},{name: "一宮"},{name: "東浪見"},{name: "志田下"},{name: "夷隅"},{name: "大原"},{name: "岩和田"},{name: "御宿"},{name: "サンドラ"},{name: "部原"}])
-chiba_2 = chiba.children.create(name: "千葉南エリア")
-chiba_2.children.create([{name: "マルキ"},{name: "グランド下"},{name: "待崎川河口"},{name: "シーサイド"},{name: "京王マンション下"},{name: "墓下"},{name: "J's前"},{name: "白渚"},{name: "花かご"},{name: "千歳"},{name: "千倉"},{name: "平砂浦"},{name: "下洲"},{name: "川名"},{name: "篠部"}])
-
-# 神奈川
-shonan = Point.create(name: "神奈川")
-shonan_1 = shonan.children.create(name: "湘南エリア")
-shonan_1.children.create([{name: "由比ヶ浜"},{name: "稲村ヶ崎"},{name: "七里ヶ浜"},{name: "鎌高前"},{name: "一本松"},{name: "腰越漁港"},{name: "水族館前"},{name: "鵠沼マクドナルド前"},{name: "引地川河口"},{name: "スエヒロ"},{name: "辻堂正面"},{name: "辻堂第二駐車場前"},{name: "クソ下"},{name: "チサン"},{name: "チーパー"},{name: "パーク"},{name: "裏パーク"},{name: "西浜"},{name: "カボチャ"},{name: "白樺"}])
-shonan_2 = shonan.children.create(name: "西湘エリア")
-shonan_2.children.create([{name: "生コン"},{name: "虹ヶ浜"},{name: "花水川河口"},{name: "大磯"},{name: "小田原"},{name: "吉浜"}])
-
-# 静岡
-shizuoka = Point.create(name: "静岡")
-shizuoka_1 = shizuoka.children.create(name: "伊豆エリア")
-shizuoka_1.children.create([{name: "宇佐美"},{name: "熱川"},{name: "今井浜"},{name: "河津"},{name: "プリンス前"},{name: "白浜"},{name: "多々戸浜"},{name: "入田浜"},{name: "大浜"}])
-shizuoka_2 = shizuoka.children.create(name: "新島エリア")
-shizuoka_2.children.create([{name: "淡井浦"},{name: "羽伏磯"},{name: "羽伏浦"},{name: "ヘリ下"},{name: "シークレット"},{name: "間々下"},{name: "B堤"}])
-shizuoka_3 = shizuoka.children.create(name: "大島エリア")
-shizuoka_3.children.create([{name: "小口岬"},{name: "筆島"},{name: "波浮港"},{name: "砂の浜"},{name: "ジュンカメ"},{name: "地引浜"},{name: "ケタリーフ"},{name: "元町前"}])
-shizuoka_4 = shizuoka.children.create(name: "静波/御前崎エリア")
-shizuoka_4.children.create([{name: "静波"},{name: "片浜"},{name: "御前崎"},{name: "清水"}])
-shizuoka_5 = shizuoka.children.create(name: "磐田/浜松エリア")
-shizuoka_5.children.create([{name: "掛川"},{name: "豊浜"},{name: "西浜"},{name: "鮫島"},{name: "中田島"},{name: "篠原(ゴルフ場前)"},{name: "ゲームセンター前"},{name: "舞阪/灯台前"},{name: "舞阪/メイン"},{name: "新居"},{name: "潮見坂(県境)"},{name: "潮見坂(トイレ前)"},{name: "潮見坂(GS前)"}])
-
-# 愛知
-aichi = Point.create(name: "愛知")
-aichi_1 = aichi.children.create(name: "伊良湖エリア")
-aichi_1.children.create([{name: "ロングビーチ"},{name: "ロコ"},{name: "東日本"},{name: "全日本"},{name: "港"},{name: "チキン"},{name: "伊勢湾"},{name: "百々"},{name: "寺沢"},{name: "寺沢/老人ホーム前"},{name: "六連"},{name: "伊古部"}])
-
-# 和歌山
-wakayama = Point.create(name: "和歌山")
-wakayama_1 = wakayama.children.create(name: "磯ノ浦エリア")
-wakayama_1.children.create([{name: "磯ノ浦"}])
-wakayama_2 = wakayama.children.create(name: "南紀エリア")
-wakayama_2.children.create([{name: "田浜"},{name: "那智勝浦"},])
-wakayama_3 = wakayama.children.create(name: "伊勢エリア")
-wakayama_3.children.create([{name: "三角"},{name: "ラスタ前"},{name: "甲府の浜"},{name: "壊れた水門前"},{name: "松林"},{name: "市後浜"},{name: "ジャン"},{name: "南張"}])
-
-# 福井
-fukui = Point.create(name: "福井")
-fukui_1 = fukui.children.create(name: "福井エリア")
-fukui_1.children.create([{name: "鳥居浜"},{name: "難波江"},{name: "高浜メイン"},{name: "鷹巣五木"},{name: "鷹巣新港"}])
-
-# 高知
-kouchi = Point.create(name: "高知")
-kouchi_1 = kouchi.children.create(name: "高知エリア")
-kouchi_1.children.create([{name: "生見"},{name: "尾崎"},{name: "高知"},{name: "高知/大方浮鞭"},{name: "四万十"},{name: "入野松原"},{name: "田野浦"},{name: "双海"},{name: "平野"},{name: "大枝の浜"}])
-
-#徳島
-tokushima = Point.create(name: "徳島")
-tokushima_1 = tokushima.children.create(name: "徳島エリア")
-tokushima_1.children.create([{name: "内妻"},{name: "穴喰"}])
-
-#島根
-shimane = Point.create(name: "島根")
-shimane_1 = shimane.children.create(name: "島根エリア")
-shimane_1.children.create([{name: "稲佐の浜"},{name: "小田"},{name: "波根"},{name: "浅利"},{name: "波子"},{name: "石見海浜公園"},{name: "千畳"},{name: "津田"},{name: "大塚"},{name: "高津"}])
-
-#鳥取
-tottori = Point.create(name: "鳥取")
-tottori_1 = tottori.children.create(name: "鳥取エリア")
-tottori_1.children.create([{name: "弓ヶ浜"},{name: "大黒"},{name: "ポート赤碕"},{name: "ぼくら"},{name: "羽合"},{name: "石脇"},{name: "井手ヶ浜"},{name: "青谷"},{name: "船磯"},{name: "小沢見"},{name: "白兎"},{name: "賀露"},{name: "岩戸"},{name: "浦富"},{name: "羽尾"},{name: "東浜"}])
-
-# 宮崎
-miyazaki = Point.create(name: "宮崎")
-miyazaki_1 = miyazaki.children.create(name: "北部エリア")
-miyazaki_1.children.create([{name: "小倉ヶ浜"},{name: "金ヶ浜"},{name: "墓下"},{name: "伊倉浜"}])
-miyazaki_2 = miyazaki.children.create(name: "南部エリア")
-miyazaki_2.children.create([{name: "一ツ瀬河口"},{name: "動物園下"},{name: "石崎浜"},{name: "野球場裏"},{name: "トムワトソン"},{name: "一ツ葉"},{name: "赤江"},{name: "木崎浜"},{name: "こどもの国"},{name: "プリンス前"},{name: "内海"},{name: "伊比井"},{name: "鵜戸下"},{name: "子吹井"},{name: "直線"},{name: "先端"},{name: "大浦"},{name: "昭寿園"},{name: "梅ヶ浜"},{name: "大堂津"},{name: "恋ヶ裏"}])
-
-# 鹿児島
-kagoshima = Point.create(name: "鹿児島")
-kagoshima_1 = kagoshima.children.create(name: "鹿児島エリア")
-kagoshima_1.children.create([{name: "入野"},{name: "鬼口"},{name: "馬渡"},{name: "江口浜"},{name: "照島"},{name: "折口"}])
-
-# 熊本
-kumamoto = Point.create(name: "熊本")
-kumamoto_1 = kumamoto.children.create(name: "熊本エリア")
-kumamoto_1.children.create([{name: "高浜"},{name: "都呂呂"},{name: "火葬場下"}])
-
-# 佐賀
-saga = Point.create(name: "佐賀")
-saga_1 = saga.children.create(name: "佐賀エリア")
-saga_1.children.create([{name: "立神"},{name: "北浜"},{name: "東の浜"}])
-
-# 福岡
-fukuoka = Point.create(name: "福岡")
-fukuoka_1 = fukuoka.children.create(name: "福岡エリア")
-fukuoka_1.children.create([{name: "芥屋"},{name: "野北"},{name: "大口"},{name: "二見ヶ浦"},{name: "奈多"},{name: "三苫"},{name: "新宮"},{name: "釣川河口"},{name: "さつき松原"},{name: "鐘崎"},{name: "インサイドボウル"},{name: "波津漁港"},{name: "汐入川"},{name: "芦屋"},{name: "洞山"},{name: "夏井ヶ浜"},{name: "サメ"},{name: "岩屋"},{name: "脇田"}])
-
-# 沖縄
-okinawa = Point.create(name: "沖縄")
-okinawa_1 = okinawa.children.create(name: "沖縄エリア")
-okinawa_1.children.create([{name: "安謝"},{name: "ボウル"},{name: "タートル"},{name: "残波"},{name: "真栄田"},{name: "部間"},{name: "コーチャン"},{name: "安波"},{name: "スーサイド"}])
+Point.create!(
+  [
+    {
+      id: '1',
+      name: '鹿部',
+      area_id: '1'
+    },
+    {
+      id: '2',
+      name: '女那川',
+      area_id: '1'
+    },
+    {
+      id: '3',
+      name: '戸井',
+      area_id: '1'
+    },
+    {
+      id: '4',
+      name: '中村下',
+      area_id: '1'
+    },
+    {
+      id: '5',
+      name: '住吉',
+      area_id: '1'
+    },
+    {
+      id: '6',
+      name: '浜厚真',
+      area_id: '2'
+    },
+    {
+      id: '7',
+      name: '白老',
+      area_id: '2'
+    },
+    {
+      id: '8',
+      name: 'イタンキ浜',
+      area_id: '2'
+    },
+    {
+      id: '9',
+      name: '古平',
+      area_id: '2'
+    },
+    {
+      id: '10',
+      name: 'フゴッペ',
+      area_id: '2'
+    },
+    {
+      id: '11',
+      name: '塩谷',
+      area_id: '2'
+    },
+    {
+      id: '12',
+      name: '銭函',
+      area_id: '2'
+    },
+    {
+      id: '13',
+      name: '東小樽',
+      area_id: '2'
+    },
+    {
+      id: '14',
+      name: '高瀬川',
+      area_id: '3'
+    },
+    {
+      id: '15',
+      name: '三沢漁港',
+      area_id: '3'
+    },
+    {
+      id: '16',
+      name: '大須賀',
+      area_id: '4'
+    },
+    {
+      id: '17',
+      name: '種差',
+      area_id: '4'
+    },
+    {
+      id: '18',
+      name: '大久喜',
+      area_id: '4'
+    },
+    {
+      id: '19',
+      name: '金浜',
+      area_id: '4'
+    },
+    {
+      id: '20',
+      name: '角の浜',
+      area_id: '5'
+    },
+    {
+      id: '21',
+      name: '川尻',
+      area_id: '5'
+    },
+    {
+      id: '22',
+      name: '大浜',
+      area_id: '5'
+    },
+    {
+      id: '23',
+      name: '有家',
+      area_id: '5'
+    },
+    {
+      id: '24',
+      name: '十府ヶ浦',
+      area_id: '5'
+    },
+    {
+      id: '25',
+      name: '安家川',
+      area_id: '5'
+    },
+    {
+      id: '26',
+      name: '重茂',
+      area_id: '6'
+    },
+    {
+      id: '27',
+      name: '浪板',
+      area_id: '6'
+    },
+    {
+      id: '28',
+      name: '吉浜',
+      area_id: '6'
+    },
+    {
+      id: '29',
+      name: '千丸',
+      area_id: '6'
+    },
+    {
+      id: '30',
+      name: '門之浜',
+      area_id: '6'
+    },
+    {
+      id: '31',
+      name: '米崎',
+      area_id: '6'
+    },
+    {
+      id: '32',
+      name: '高田河口',
+      area_id: '6'
+    },
+    {
+      id: '33',
+      name: '宮崎海岸',
+      area_id: '7'
+    },
+    {
+      id: '34',
+      name: '船越',
+      area_id: '7'
+    },
+    {
+      id: '35',
+      name: '出戸浜',
+      area_id: '7'
+    },
+    {
+      id: '36',
+      name: '二古',
+      area_id: '7'
+    },
+    {
+      id: '37',
+      name: '本荘浜',
+      area_id: '7'
+    },
+    {
+      id: '38',
+      name: '西目',
+      area_id: '7'
+    },
+    {
+      id: '39',
+      name: '三森',
+      area_id: '7'
+    },
+    {
+      id: '40',
+      name: '小砂川',
+      area_id: '7'
+    },
+    {
+      id: '41',
+      name: '小泉海水浴場　河口',
+      area_id: '8'
+    },
+    {
+      id: '42',
+      name: '小泉海水浴場　パレス前第2ポイント',
+      area_id: '8'
+    },
+    {
+      id: '43',
+      name: '小泉海水浴場　パレス前第1ポイント',
+      area_id: '8'
+    },
+    {
+      id: '44',
+      name: '本吉 ウニ浜ポイント',
+      area_id: '8'
+    },
+    {
+      id: '45',
+      name: '本吉 石浜ポイント',
+      area_id: '8'
+    },
+    {
+      id: '46',
+      name: '本吉 崖前ポイント',
+      area_id: '8'
+    },
+    {
+      id: '47',
+      name: '長浜海水浴場ポイント',
+      area_id: '8'
+    },
+    {
+      id: '48',
+      name: '大曲海岸',
+      area_id: '8'
+    },
+    {
+      id: '49',
+      name: '浜市海岸',
+      area_id: '8'
+    },
+    {
+      id: '50',
+      name: '野蒜',
+      area_id: '8'
+    },
+    {
+      id: '51',
+      name: '菖蒲田浜',
+      area_id: '9'
+    },
+    {
+      id: '52',
+      name: '仙台新港',
+      area_id: '9'
+    },
+    {
+      id: '53',
+      name: '蒲生',
+      area_id: '9'
+    },
+    {
+      id: '54',
+      name: '深沼',
+      area_id: '9'
+    },
+    {
+      id: '55',
+      name: '閖上',
+      area_id: '9'
+    },
+    {
+      id: '56',
+      name: '荒浜',
+      area_id: '9'
+    },
+    {
+      id: '57',
+      name: '湯野浜',
+      area_id: '10'
+    },
+    {
+      id: '58',
+      name: '東港',
+      area_id: '11'
+    },
+    {
+      id: '59',
+      name: '島見',
+      area_id: '11'
+    },
+    {
+      id: '60',
+      name: '小針',
+      area_id: '12'
+    },
+    {
+      id: '61',
+      name: '新川',
+      area_id: '12'
+    },
+    {
+      id: '62',
+      name: '港漁港',
+      area_id: '12'
+    },
+    {
+      id: '63',
+      name: '五ヶ浜',
+      area_id: '12'
+    },
+    {
+      id: '64',
+      name: '白岩',
+      area_id: '12'
+    },
+    {
+      id: '65',
+      name: '間瀬',
+      area_id: '12'
+    },
+    {
+      id: '66',
+      name: '牛ちゃん',
+      area_id: '12'
+    },
+    {
+      id: '67',
+      name: '寺泊',
+      area_id: '12'
+    },
+    {
+      id: '68',
+      name: '高浜',
+      area_id: '13'
+    },
+    {
+      id: '69',
+      name: '大湊',
+      area_id: '13'
+    },
+    {
+      id: '70',
+      name: '荒浜',
+      area_id: '13'
+    },
+    {
+      id: '71',
+      name: '松波',
+      area_id: '13'
+    },
+    {
+      id: '72',
+      name: '米山',
+      area_id: '13'
+    },
+    {
+      id: '73',
+      name: '郷津',
+      area_id: '14'
+    },
+    {
+      id: '74',
+      name: '谷浜',
+      area_id: '14'
+    },
+    {
+      id: '75',
+      name: '名立',
+      area_id: '14'
+    },
+    {
+      id: '76',
+      name: '百川',
+      area_id: '14'
+    },
+    {
+      id: '77',
+      name: '門前',
+      area_id: '15'
+    },
+    {
+      id: '78',
+      name: '鹿頭',
+      area_id: '15'
+    },
+    {
+      id: '79',
+      name: '柴垣',
+      area_id: '15'
+    },
+    {
+      id: '80',
+      name: '滝',
+      area_id: '15'
+    },
+    {
+      id: '81',
+      name: '大浜',
+      area_id: '16'
+    },
+    {
+      id: '82',
+      name: '金石',
+      area_id: '16'
+    },
+    {
+      id: '83',
+      name: '専光寺',
+      area_id: '16'
+    },
+    {
+      id: '84',
+      name: '美川',
+      area_id: '16'
+    },
+    {
+      id: '85',
+      name: '片野',
+      area_id: '16'
+    },
+    {
+      id: '86',
+      name: '塩谷',
+      area_id: '16'
+    },
+    {
+      id: '87',
+      name: 'ラハイナ',
+      area_id: '17'
+    },
+    {
+      id: '88',
+      name: 'カゲスカ',
+      area_id: '17'
+    },
+    {
+      id: '89',
+      name: 'ブタ下',
+      area_id: '17'
+    },
+    {
+      id: '90',
+      name: '右田浜',
+      area_id: '17'
+    },
+    {
+      id: '91',
+      name: '鳥',
+      area_id: '17'
+    },
+    {
+      id: '92',
+      name: '坂下',
+      area_id: '17'
+    },
+    {
+      id: '93',
+      name: '北泉',
+      area_id: '17'
+    },
+    {
+      id: '94',
+      name: 'チキン下',
+      area_id: '17'
+    },
+    {
+      id: '95',
+      name: '請戸',
+      area_id: '17'
+    },
+    {
+      id: '96',
+      name: '岩沢',
+      area_id: '18'
+    },
+    {
+      id: '97',
+      name: '四倉',
+      area_id: '18'
+    },
+    {
+      id: '98',
+      name: '二見が浦',
+      area_id: '18'
+    },
+    {
+      id: '99',
+      name: 'ウエストコースト',
+      area_id: '18'
+    },
+    {
+      id: '100',
+      name: '勿来',
+      area_id: '18'
+    },
+    {
+      id: '101',
+      name: '二つ島',
+      area_id: '19'
+    },
+    {
+      id: '102',
+      name: '川尻',
+      area_id: '19'
+    },
+    {
+      id: '103',
+      name: '日立駅下',
+      area_id: '19'
+    },
+    {
+      id: '104',
+      name: '河原子',
+      area_id: '19'
+    },
+    {
+      id: '105',
+      name: '日立灯台下',
+      area_id: '19'
+    },
+    {
+      id: '106',
+      name: '阿字ケ浦',
+      area_id: '20'
+    },
+    {
+      id: '107',
+      name: '大洗',
+      area_id: '20'
+    },
+    {
+      id: '108',
+      name: '大貫',
+      area_id: '20'
+    },
+    {
+      id: '109',
+      name: '京知釜',
+      area_id: '21'
+    },
+    {
+      id: '110',
+      name: 'とっぷさんて',
+      area_id: '21'
+    },
+    {
+      id: '111',
+      name: '波崎',
+      area_id: '21'
+    },
+    {
+      id: '112',
+      name: '飯岡',
+      area_id: '22'
+    },
+    {
+      id: '113',
+      name: '吉崎',
+      area_id: '22'
+    },
+    {
+      id: '114',
+      name: '作田',
+      area_id: '22'
+    },
+    {
+      id: '115',
+      name: '片貝漁港',
+      area_id: '22'
+    },
+    {
+      id: '116',
+      name: '片貝新堤',
+      area_id: '22'
+    },
+    {
+      id: '117',
+      name: '豊海',
+      area_id: '22'
+    },
+    {
+      id: '118',
+      name: '白里',
+      area_id: '22'
+    },
+    {
+      id: '119',
+      name: '白子',
+      area_id: '22'
+    },
+    {
+      id: '120',
+      name: '一松',
+      area_id: '22'
+    },
+    {
+      id: '121',
+      name: '一宮',
+      area_id: '22'
+    },
+    {
+      id: '122',
+      name: '東浪見',
+      area_id: '22'
+    },
+    {
+      id: '123',
+      name: '志田下',
+      area_id: '22'
+    },
+    {
+      id: '124',
+      name: '夷隅',
+      area_id: '22'
+    },
+    {
+      id: '125',
+      name: '大原',
+      area_id: '22'
+    },
+    {
+      id: '126',
+      name: '岩和田',
+      area_id: '22'
+    },
+    {
+      id: '127',
+      name: '御宿',
+      area_id: '22'
+    },
+    {
+      id: '128',
+      name: 'サンドラ',
+      area_id: '22'
+    },
+    {
+      id: '129',
+      name: '部原',
+      area_id: '22'
+    },
+    {
+      id: '130',
+      name: 'マルキ',
+      area_id: '23'
+    },
+    {
+      id: '131',
+      name: 'グランド下',
+      area_id: '23'
+    },
+    {
+      id: '132',
+      name: '待崎川河口',
+      area_id: '23'
+    },
+    {
+      id: '133',
+      name: 'シーサイド',
+      area_id: '23'
+    },
+    {
+      id: '134',
+      name: '京王マンション下',
+      area_id: '23'
+    },
+    {
+      id: '135',
+      name: '墓下',
+      area_id: '23'
+    },
+    {
+      id: '136',
+      name: 'Js前',
+      area_id: '23'
+    },
+    {
+      id: '137',
+      name: '白渚',
+      area_id: '23'
+    },
+    {
+      id: '138',
+      name: '花かご',
+      area_id: '23'
+    },
+    {
+      id: '139',
+      name: '千歳',
+      area_id: '23'
+    },
+    
+    {
+      id: '140',
+      name: '平砂浦',
+      area_id: '23'
+    },
+    {
+      id: '141',
+      name: '下洲',
+      area_id: '23'
+    },
+    {
+      id: '142',
+      name: '川名',
+      area_id: '23'
+    },
+    {
+      id: '143',
+      name: '篠部',
+      area_id: '23'
+    },
+    {
+      id: '144',
+      name: '由比ヶ浜',
+      area_id: '24'
+    },
+    {
+      id: '145',
+      name: '稲村ヶ崎',
+      area_id: '24'
+    },
+    {
+      id: '146',
+      name: '七里ヶ浜',
+      area_id: '24'
+    },
+    {
+      id: '147',
+      name: '鎌高前',
+      area_id: '24'
+    },
+    {
+      id: '148',
+      name: '一本松',
+      area_id: '24'
+    },
+    {
+      id: '149',
+      name: '腰越漁港',
+      area_id: '24'
+    },
+    {
+      id: '150',
+      name: '水族館前',
+      area_id: '24'
+    },
+    {
+      id: '151',
+      name: '鵠沼マクドナルド前',
+      area_id: '24'
+    },
+    {
+      id: '152',
+      name: '引地川河口',
+      area_id: '24'
+    },
+    {
+      id: '153',
+      name: 'スエヒロ',
+      area_id: '24'
+    },
+    {
+      id: '154',
+      name: '辻堂正面',
+      area_id: '24'
+    },
+    {
+      id: '155',
+      name: '辻堂第二駐車場前',
+      area_id: '24'
+    },
+    {
+      id: '156',
+      name: 'クソ下',
+      area_id: '24'
+    },
+    {
+      id: '157',
+      name: 'チサン',
+      area_id: '24'
+    },
+    {
+      id: '158',
+      name: 'チーパー',
+      area_id: '24'
+    },
+    {
+      id: '159',
+      name: 'パーク',
+      area_id: '24'
+    },
+    {
+      id: '160',
+      name: '裏パーク',
+      area_id: '24'
+    },
+    {
+      id: '161',
+      name: '西浜',
+      area_id: '24'
+    },
+    {
+      id: '162',
+      name: 'カボチャ',
+      area_id: '24'
+    },
+    {
+      id: '163',
+      name: '白樺',
+      area_id: '24'
+    },
+    {
+      id: '164',
+      name: '生コン',
+      area_id: '25'
+    },
+    {
+      id: '165',
+      name: '虹ヶ浜',
+      area_id: '25'
+    },
+    {
+      id: '166',
+      name: '花水川河口',
+      area_id: '25'
+    },
+    {
+      id: '167',
+      name: '大磯',
+      area_id: '25'
+    },
+    {
+      id: '168',
+      name: '小田原',
+      area_id: '25'
+    },
+    {
+      id: '169',
+      name: '吉浜',
+      area_id: '25'
+    },
+    {
+      id: '170',
+      name: '宇佐美',
+      area_id: '26'
+    },
+    {
+      id: '171',
+      name: '熱川',
+      area_id: '26'
+    },
+    {
+      id: '172',
+      name: '今井浜',
+      area_id: '26'
+    },
+    {
+      id: '173',
+      name: '河津',
+      area_id: '26'
+    },
+    {
+      id: '174',
+      name: 'プリンス前',
+      area_id: '26'
+    },
+    {
+      id: '175',
+      name: '白浜',
+      area_id: '26'
+    },
+    {
+      id: '176',
+      name: '多々戸浜',
+      area_id: '26'
+    },
+    {
+      id: '177',
+      name: '入田浜',
+      area_id: '26'
+    },
+    {
+      id: '178',
+      name: '大浜',
+      area_id: '26'
+    },
+    {
+      id: '179',
+      name: '淡井浦',
+      area_id: '27'
+    },
+    {
+      id: '180',
+      name: '羽伏磯',
+      area_id: '27'
+    },
+    {
+      id: '181',
+      name: 'ヘリ下',
+      area_id: '27'
+    },
+    {
+      id: '182',
+      name: 'シークレット',
+      area_id: '27'
+    },
+    {
+      id: '183',
+      name: '間々下',
+      area_id: '27'
+    },
+    {
+      id: '184',
+      name: 'B堤',
+      area_id: '27'
+    },
+    {
+      id: '185',
+      name: '小口岬',
+      area_id: '28'
+    },
+    {
+      id: '186',
+      name: '筆島',
+      area_id: '28'
+    },
+    {
+      id: '187',
+      name: '波浮港',
+      area_id: '28'
+    },
+    {
+      id: '188',
+      name: '砂の浜',
+      area_id: '28'
+    },
+    {
+      id: '189',
+      name: 'ジュンカメ',
+      area_id: '28'
+    },
+    {
+      id: '190',
+      name: '地引浜',
+      area_id: '28'
+    },
+    {
+      id: '191',
+      name: 'ケタリーフ',
+      area_id: '28'
+    },
+    {
+      id: '192',
+      name: '元町前',
+      area_id: '28'
+    },
+    {
+      id: '193',
+      name: '静波',
+      area_id: '29'
+    },
+    {
+      id: '194',
+      name: '片浜',
+      area_id: '29'
+    },
+    {
+      id: '195',
+      name: '御前崎',
+      area_id: '29'
+    },
+    {
+      id: '196',
+      name: '清水',
+      area_id: '29'
+    },
+    {
+      id: '197',
+      name: '掛川',
+      area_id: '30'
+    },
+    {
+      id: '198',
+      name: '豊浜',
+      area_id: '30'
+    },
+    {
+      id: '199',
+      name: '西浜',
+      area_id: '30'
+    },
+    {
+      id: '200',
+      name: '鮫島',
+      area_id: '30'
+    },
+    {
+      id: '201',
+      name: '中田島',
+      area_id: '30'
+    },
+    {
+      id: '202',
+      name: '篠原(ゴルフ場前)',
+      area_id: '30'
+    },
+    {
+      id: '203',
+      name: 'ゲームセンター前',
+      area_id: '30'
+    },
+    {
+      id: '204',
+      name: '舞阪/灯台前',
+      area_id: '30'
+    },
+    {
+      id: '205',
+      name: '舞阪/メイン',
+      area_id: '30'
+    },
+    {
+      id: '206',
+      name: '新居',
+      area_id: '30'
+    },
+    {
+      id: '207',
+      name: '潮見坂(県境)',
+      area_id: '30'
+    },
+    {
+      id: '208',
+      name: '潮見坂(トイレ前)',
+      area_id: '30'
+    },
+    {
+      id: '209',
+      name: '潮見坂(GS前)',
+      area_id: '30'
+    },
+    {
+      id: '210',
+      name: 'ロングビーチ',
+      area_id: '31'
+    },
+    {
+      id: '211',
+      name: 'ロコ',
+      area_id: '31'
+    },
+    {
+      id: '212',
+      name: '東日本',
+      area_id: '31'
+    },
+    {
+      id: '213',
+      name: '全日本',
+      area_id: '31'
+    },
+    {
+      id: '214',
+      name: '港',
+      area_id: '31'
+    },
+    {
+      id: '215',
+      name: 'チキン',
+      area_id: '31'
+    },
+    {
+      id: '216',
+      name: '伊勢湾',
+      area_id: '31'
+    },
+    {
+      id: '217',
+      name: '百々',
+      area_id: '31'
+    },
+    {
+      id: '218',
+      name: '寺沢',
+      area_id: '31'
+    },
+    {
+      id: '219',
+      name: '寺沢/老人ホーム前',
+      area_id: '31'
+    },
+    {
+      id: '220',
+      name: '六連',
+      area_id: '31'
+    },
+    {
+      id: '221',
+      name: '伊古部',
+      area_id: '31'
+    },
+    {
+      id: '222',
+      name: '磯ノ浦',
+      area_id: '32'
+    },
+    {
+      id: '223',
+      name: '田浜',
+      area_id: '33'
+    },
+    {
+      id: '224',
+      name: '那智勝浦',
+      area_id: '33'
+    },
+    {
+      id: '225',
+      name: '三角',
+      area_id: '34'
+    },
+    {
+      id: '226',
+      name: 'ラスタ前',
+      area_id: '34'
+    },
+    {
+      id: '227',
+      name: '甲府の浜',
+      area_id: '34'
+    },
+    {
+      id: '228',
+      name: '壊れた水門前',
+      area_id: '34'
+    },
+    {
+      id: '229',
+      name: '松林',
+      area_id: '34'
+    },
+    {
+      id: '230',
+      name: '市後浜',
+      area_id: '34'
+    },
+    {
+      id: '231',
+      name: 'ジャン',
+      area_id: '34'
+    },
+    {
+      id: '232',
+      name: '南張',
+      area_id: '34'
+    },
+    {
+      id: '233',
+      name: '鳥居浜',
+      area_id: '35'
+    },
+    {
+      id: '234',
+      name: '難波江',
+      area_id: '35'
+    },
+    {
+      id: '235',
+      name: '高浜メイン',
+      area_id: '35'
+    },
+    {
+      id: '236',
+      name: '鷹巣五木',
+      area_id: '35'
+    },
+    {
+      id: '237',
+      name: '鷹巣新港',
+      area_id: '35'
+    },
+    {
+      id: '238',
+      name: '生見',
+      area_id: '36'
+    },
+    {
+      id: '239',
+      name: '尾崎',
+      area_id: '36'
+    },
+    {
+      id: '240',
+      name: '高知',
+      area_id: '36'
+    },
+    {
+      id: '241',
+      name: '高知/大方浮鞭',
+      area_id: '36'
+    },
+    {
+      id: '242',
+      name: '四万十',
+      area_id: '36'
+    },
+    {
+      id: '243',
+      name: '入野松原',
+      area_id: '36'
+    },
+    {
+      id: '244',
+      name: '田野浦',
+      area_id: '36'
+    },
+    {
+      id: '245',
+      name: '双海',
+      area_id: '36'
+    },
+    {
+      id: '246',
+      name: '平野',
+      area_id: '36'
+    },
+    {
+      id: '247',
+      name: '大枝の浜',
+      area_id: '36'
+    },
+    {
+      id: '248',
+      name: '内妻',
+      area_id: '37'
+    },
+    {
+      id: '249',
+      name: '穴喰',
+      area_id: '37'
+    },
+    {
+      id: '250',
+      name: '稲佐の浜',
+      area_id: '38'
+    },
+    {
+      id: '251',
+      name: '小田',
+      area_id: '38'
+    },
+    {
+      id: '252',
+      name: '波根',
+      area_id: '38'
+    },
+    {
+      id: '253',
+      name: '浅利',
+      area_id: '38'
+    },
+    {
+      id: '254',
+      name: '波子',
+      area_id: '38'
+    },
+    {
+      id: '255',
+      name: '石見海浜公園',
+      area_id: '38'
+    },
+    {
+      id: '256',
+      name: '千畳',
+      area_id: '38'
+    },
+    {
+      id: '257',
+      name: '津田',
+      area_id: '38'
+    },
+    {
+      id: '258',
+      name: '大塚',
+      area_id: '38'
+    },
+    {
+      id: '259',
+      name: '高津',
+      area_id: '38'
+    },
+    {
+      id: '260',
+      name: '弓ヶ浜',
+      area_id: '39'
+    },
+    {
+      id: '261',
+      name: '大黒',
+      area_id: '39'
+    },
+    {
+      id: '262',
+      name: 'ポート赤碕',
+      area_id: '39'
+    },
+    {
+      id: '263',
+      name: 'ぼくら',
+      area_id: '39'
+    },
+    {
+      id: '264',
+      name: '羽合',
+      area_id: '39'
+    },
+    {
+      id: '265',
+      name: '石脇',
+      area_id: '39'
+    },
+    {
+      id: '266',
+      name: '井手ヶ浜',
+      area_id: '39'
+    },
+    {
+      id: '267',
+      name: '青谷',
+      area_id: '39'
+    },
+    {
+      id: '268',
+      name: '船磯',
+      area_id: '39'
+    },
+    {
+      id: '269',
+      name: '小沢見',
+      area_id: '39'
+    },
+    {
+      id: '270',
+      name: '白兎',
+      area_id: '39'
+    },
+    {
+      id: '271',
+      name: '賀露',
+      area_id: '39'
+    },
+    {
+      id: '272',
+      name: '岩戸',
+      area_id: '39'
+    },
+    {
+      id: '273',
+      name: '浦富',
+      area_id: '39'
+    },
+    {
+      id: '274',
+      name: '羽尾',
+      area_id: '39'
+    },
+    {
+      id: '275',
+      name: '東浜',
+      area_id: '39'
+    },
+    {
+      id: '276',
+      name: '小倉ヶ浜',
+      area_id: '40'
+    },
+    {
+      id: '277',
+      name: '金ヶ浜',
+      area_id: '40'
+    },
+    {
+      id: '278',
+      name: '墓下',
+      area_id: '40'
+    },
+    {
+      id: '279',
+      name: '伊倉浜',
+      area_id: '40'
+    },
+    {
+      id: '280',
+      name: '一ツ瀬河口',
+      area_id: '41'
+    },
+    {
+      id: '281',
+      name: '動物園下',
+      area_id: '41'
+    },
+    {
+      id: '282',
+      name: '石崎浜',
+      area_id: '41'
+    },
+    {
+      id: '283',
+      name: '野球場裏',
+      area_id: '41'
+    },
+    {
+      id: '284',
+      name: 'トムワトソン',
+      area_id: '41'
+    },
+    {
+      id: '285',
+      name: '一ツ葉',
+      area_id: '41'
+    },
+    {
+      id: '286',
+      name: '赤江',
+      area_id: '41'
+    },
+    {
+      id: '287',
+      name: '木崎浜',
+      area_id: '41'
+    },
+    {
+      id: '288',
+      name: 'こどもの国',
+      area_id: '41'
+    },
+    {
+      id: '289',
+      name: 'プリンス前',
+      area_id: '41'
+    },
+    {
+      id: '290',
+      name: '内海',
+      area_id: '41'
+    },
+    {
+      id: '291',
+      name: '伊比井',
+      area_id: '41'
+    },
+    {
+      id: '292',
+      name: '鵜戸下',
+      area_id: '41'
+    },
+    {
+      id: '293',
+      name: '子吹井',
+      area_id: '41'
+    },
+    {
+      id: '294',
+      name: '直線',
+      area_id: '41'
+    },
+    {
+      id: '295',
+      name: '先端',
+      area_id: '41'
+    },
+    {
+      id: '296',
+      name: '大浦',
+      area_id: '41'
+    },
+    {
+      id: '297',
+      name: '昭寿園',
+      area_id: '41'
+    },
+    {
+      id: '298',
+      name: '梅ヶ浜',
+      area_id: '41'
+    },
+    {
+      id: '299',
+      name: '大堂津',
+      area_id: '41'
+    },
+    {
+      id: '300',
+      name: '恋ヶ裏',
+      area_id: '41'
+    },
+    {
+      id: '301',
+      name: '入野',
+      area_id: '42'
+    },
+    {
+      id: '302',
+      name: '鬼口',
+      area_id: '42'
+    },
+    {
+      id: '303',
+      name: '馬渡',
+      area_id: '42'
+    },
+    {
+      id: '304',
+      name: '江口浜',
+      area_id: '42'
+    },
+    {
+      id: '305',
+      name: '照島',
+      area_id: '42'
+    },
+    {
+      id: '306',
+      name: '折口',
+      area_id: '42'
+    },
+    
+    {
+      id: '307',
+      name: '高浜',
+      area_id: '43'
+    },
+    
+    {
+      id: '308',
+      name: '都呂呂',
+      area_id: '43'
+    },
+    
+    {
+      id: '309',
+      name: '火葬場下',
+      area_id: '43'
+    },
+    
+    {
+      id: '310',
+      name: '立神',
+      area_id: '44'
+    },
+    {
+      id: '311',
+      name: '北浜',
+      area_id: '44'
+    },
+    {
+      id: '312',
+      name: '東の浜',
+      area_id: '44'
+    },
+    {
+      id: '313',
+      name: '芥屋',
+      area_id: '45'
+    },
+    {
+      id: '314',
+      name: '野北',
+      area_id: '45'
+    },
+    {
+      id: '315',
+      name: '大口',
+      area_id: '45'
+    },
+    {
+      id: '316',
+      name: '二見ヶ浦',
+      area_id: '45'
+    },
+    {
+      id: '317',
+      name: '奈多',
+      area_id: '45'
+    },
+    {
+      id: '318',
+      name: '三苫',
+      area_id: '45'
+    },
+    {
+      id: '319',
+      name: '新宮',
+      area_id: '45'
+    },
+    {
+      id: '320',
+      name: '釣川河口',
+      area_id: '45'
+    },
+    {
+      id: '321',
+      name: 'さつき松原',
+      area_id: '45'
+    },
+    {
+      id: '322',
+      name: '鐘崎',
+      area_id: '45'
+    },
+    {
+      id: '323',
+      name: 'インサイドボウル',
+      area_id: '45'
+    },
+    {
+      id: '324',
+      name: '波津漁港',
+      area_id: '45'
+    },
+    {
+      id: '325',
+      name: '汐入川',
+      area_id: '45'
+    },
+    {
+      id: '326',
+      name: '芦屋',
+      area_id: '45'
+    },
+    {
+      id: '327',
+      name: '洞山',
+      area_id: '45'
+    },
+    {
+      id: '328',
+      name: '夏井ヶ浜',
+      area_id: '45'
+    },
+    {
+      id: '329',
+      name: 'サメ',
+      area_id: '45'
+    },
+    {
+      id: '330',
+      name: '岩屋',
+      area_id: '45'
+    },
+    {
+      id: '331',
+      name: '脇田',
+      area_id: '45'
+    },
+    {
+      id: '332',
+      name: '安謝',
+      area_id: '46'
+    },
+    {
+      id: '333',
+      name: 'ボウル',
+      area_id: '46'
+    },
+    {
+      id: '334',
+      name: 'タートル',
+      area_id: '46'
+    },
+    {
+      id: '335',
+      name: '残波',
+      area_id: '46'
+    },
+    {
+      id: '336',
+      name: '真栄田',
+      area_id: '46'
+    },
+    {
+      id: '337',
+      name: '部間',
+      area_id: '46'
+    },
+    {
+      id: '338',
+      name: 'コーチャン',
+      area_id: '46'
+    },
+    {
+      id: '339',
+      name: '安波',
+      area_id: '46'
+    },
+    {
+      id: '340',
+      name: 'スーサイド',
+      area_id: '46'
+    },
+    {
+      id: '341',
+      name: '千倉',
+      area_id: '23'
+    },
+  ]
+)

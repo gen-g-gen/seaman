@@ -126,7 +126,7 @@ Area.create!(
     },
     {
       id: '4',
-      name: '県北エリア',
+      name: '八戸エリア',
       prefecture_id: '2'
     },
     {

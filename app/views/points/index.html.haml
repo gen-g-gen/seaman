@@ -1,0 +1,18 @@
+.wrapper
+  =render "shared/left"
+  .point
+    .point__top
+      point検索
+    .point__box
+      .point__box__outside
+        .point__box__outside__left
+          =@area.name
+        .point__box__outside__right
+          .point__box__outside__right__content
+            - @point.each do |point|
+              -if @area.id == point.area_id 
+                .point__box__outside__right__content
+                  = link_to new_area_point_message_path(@area, point) do
+                    = point.name 
+                    %br
+  =render "shared/right"

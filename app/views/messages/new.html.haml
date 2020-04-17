@@ -1,0 +1,14 @@
+.wrapper
+  =render "shared/left"
+  .main
+  .main__top
+    %img.no1{src: "/assets/logo.png"}
+  .main__message
+    .tab-panel
+      %ul.tab-group
+        %li.tab.tab-A.is-active
+          大磯
+      .panel-group
+        .panel.tab-A.is-show
+          大磯の波情報
+  =render "shared/right"

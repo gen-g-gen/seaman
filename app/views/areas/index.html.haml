@@ -1,0 +1,19 @@
+.wrapper
+  =render "shared/left"
+  .area
+    .area__top
+      point検索
+    .area__box
+      - @prefecture.zip(@area).each do |prefecture, area|
+        .area__box__outside
+          .area__box__outside__left
+            =prefecture.name
+          .area__box__outside__right
+            - @area.each do |area|
+              -if prefecture.id == area.prefecture_id 
+                .area__box__outside__right__content
+                  = link_to area_points_path(area) do
+                    = area.name 
+                    %br
+  =render "shared/right"
+      

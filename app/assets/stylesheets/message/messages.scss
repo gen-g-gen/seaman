@@ -208,8 +208,8 @@
      
       &__top{
         // background-color:green ;
-        height:100px;
-        width:100%;
+        // height:0px;
+        // width:100%;
         .no1{
           display:none;
         }
@@ -234,7 +234,7 @@
               text-align:center;
               cursor:pointer;
               background:#161674;
-              margin-right:0.3px;
+              // margin-right:0.3px;
           }
             .tab.is-active{
               background:#0a0a33;

@@ -1,36 +1,42 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name),) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "name"
-  .field
-    = f.label :point
-    %br/
-    = f.text_field :point, autofocus: true, autocomplete: "point"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if @sns_id.present?
-    = hidden_field_tag :sns_auth, true
-  - else
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
+.user
+  .user__logo
+    %img{src: "/assets/logo.png"}
+  .user__field
+    %h2 Sign up
+    = form_with model:[@user], url: registration_path(resource_name), id: 'new_user', class: 'new_user', local: true do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .user__field__box
+        = f.label :nickname
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      .user__field__box
+        = f.label :name
+        %br/
+        = f.text_field :name, autofocus: true, autocomplete: "name"
+      .user__field__map
+        .user__field__map__group#prefecture
+          .user__field__box
+            = f.label :prefecture
+            %br/
+            = f.collection_select :prefecture_id, @prefecture, :id, :name, {include_blank: true},{id: "prefecture_name"}
+      .user__field__box
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      - if @sns_id.present?
+        = hidden_field_tag :sns_auth, true
+      - else
+        .user__field__box
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} 文字以上)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+        .user__field__box
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+      .user__field__submit
+        = f.submit "Sign up"
 

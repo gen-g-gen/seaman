@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_074447) do
+ActiveRecord::Schema.define(version: 2020_04_18_012642) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "prefecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "message", null: false
+    t.text "image"
+    t.integer "point_id"
+    t.integer "user_id"
+    t.string "wave"
+    t.string "windy"
+    t.string "population"
+    t.string "set"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +66,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_074447) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "name", default: "", null: false
-    t.string "point", default: "", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "area_id", null: false
+    t.integer "point_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

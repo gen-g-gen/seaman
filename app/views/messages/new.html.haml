@@ -1,14 +1,40 @@
 .wrapper
-  =render "shared/left"
-  .main
-  .main__top
-    %img.no1{src: "/assets/logo.png"}
-  .main__message
-    .tab-panel
-      %ul.tab-group
-        %li.tab.tab-A.is-active
-          大磯
-      .panel-group
-        .panel.tab-A.is-show
-          大磯の波情報
-  =render "shared/right"
+  .left
+    #nav-content 
+      =link_to root_path do
+        %img.no1{src: "/assets/logo.png"}
+  .new
+    = form_with model: @message,:url => {:action => :create}  do |f|
+      .new__top
+        .new__top__right
+        .new__top__left
+          .new__top__left__text
+            コメント
+            = f.text_field :message
+          .new__top__left__image
+            = f.file_field :image
+      .new__middle
+        .new__middle__wave
+          波（悪いーー良い）
+          - f.label :wave
+          .rateYo1
+            = f.hidden_field :wave, :value => @message.wave
+        .new__middle__windy
+          風（無風ーー強い）
+          - f.label :windy
+          .rateYo2
+            = f.hidden_field :windy, :value => @message.windy
+        .new__middle__population
+          人数（30人--100人）
+          - f.label :population
+          .rateYo3
+            = f.hidden_field :population, :value => @message.population
+        .new__middle__set
+          セット間隔（長い--早い）
+          - f.label :set
+          .rateYo4
+            = f.hidden_field :set, :value => @message.set
+      .new__submit
+        = f.submit
+  
+  

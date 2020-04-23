@@ -12,7 +12,7 @@
             - @point.each do |point|
               -if @area.id == point.area_id 
                 .point__box__outside__right__content
-                  = link_to new_area_point_message_path(@area, point) do
+                  = link_to area_point_messages_path(@area, point) do
                     = point.name 
                     %br
   =render "shared/right"

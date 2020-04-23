@@ -8,28 +8,6 @@
     =link_to root_path do
       %img.no1{src: "/assets/logo.png"}
     %ul.nav-name
-      - if user_signed_in?
-        %li.level0
-          = link_to root_path do
-            = icon('fas', 'home')
-            #none HOME
-        %li.level0
-        = link_to new_wafe_path do
-          = icon('fab', 'osi')
-          #none 波予測
-        %li.level0
-        = link_to new_prefecture_path do
-          = icon('fas', 'search', class: "right__top__right__icon")
-          #none TOP検索
-        %li.level0
-          = "#{current_user.nickname}"
-        %li.level0
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-      - else
-        %li.level0
-          = link_to new_user_session_path do
-            = icon('far', 'user')
-            #none ログイン
       %li.level0
         = link_to root_path do
           = icon('fas', 'map-marker-alt')
@@ -944,4 +922,25 @@
                     安波
                   %li.level6
                     スーサイド
+      - if user_signed_in?
+        %li.level0
+          = link_to root_path do
+            = icon('fas', 'home')
+            #none HOME
+        %li.level0
+          = link_to new_wafe_path do
+            = icon('fab', 'osi')
+            #none 波予測
+        %li.level0
+          = link_to do
+            = icon('fas', 'search', class: "right__top__right__icon")
+            #none TOP検索
+        %li.level0
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %li.level0
+          = link_to new_user_path do
+            = icon('far', 'user')
+            #none ログイン
+
       

@@ -1,0 +1,30 @@
+.wrapper
+  =render "shared/left"
+  .main
+    .main__top
+      %img.no1{src: "/assets/logo.png"}
+    .main__message
+      .tab-panel
+        %ul.tab-group
+          %li.tab.tab-A.is-active
+            =@point.name
+            の波情報
+        .panel-group
+          .panel.tab-A.is-show
+  .right
+    .right__top
+      .right__top__left
+        検索窓
+      .right__top__right
+        = icon('fas', 'search', class: "right__top__right__icon")
+        
+    .right__chart
+      トップチャート
+    - if user_signed_in?
+      .right__icon
+        = link_to new_area_point_message_path(@area,@point), class: "btn" do
+          .main__icon_sub
+            -# %p 新規投稿
+          .main__icon_btn
+            =image_tag "mini-logo2.png", size: "74x74"
+    

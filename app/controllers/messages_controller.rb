@@ -3,7 +3,9 @@ class MessagesController < ApplicationController
   def index
     @area = Area.find(params[:area_id])
     @point = Point.find(params[:point_id])
-   
+    @prefectures = Prefecture.select(:name, :id)
+    @areas = Area.select(:name, :id, :prefecture_id)
+    @points = Point.select(:name, :id, :area_id)
 
     
   end

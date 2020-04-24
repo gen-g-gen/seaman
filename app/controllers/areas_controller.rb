@@ -1,8 +1,9 @@
 class AreasController < ApplicationController
 
   def index
-    @prefecture = Prefecture.all
-    @area = Area.all.includes(:prefecture)
-    # binding.pry
+    @prefectures = Prefecture.select(:name, :id)
+    @areas = Area.select(:name, :id, :prefecture_id)
+    @points = Point.select(:name, :id, :area_id)
   end
+
 end

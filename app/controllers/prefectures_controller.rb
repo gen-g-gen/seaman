@@ -2,11 +2,9 @@ class PrefecturesController < ApplicationController
   before_action :set_point_array, only: [:index]
 
   def index
-    # @prefecture = Prefecture.where(params[:id])
-    @prefecture = Prefecture.pluck("id")
-    @prefectures = Prefecture.pluck("name")
-    @area = Area.pluck("id")
-    @areas = Area.pluck("name")
+    @prefectures = Prefecture.select(:name, :id)
+    @areas = Area.select(:name, :id, :prefecture_id)
+    @points = Point.select(:name, :id, :area_id)
     # binding.pry
   end
 

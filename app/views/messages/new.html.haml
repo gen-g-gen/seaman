@@ -4,7 +4,7 @@
       =link_to root_path do
         %img.no1{src: "/assets/logo.png"}
   .new
-    = form_with model: @message,:url => {:action => :create}  do |f|
+    = form_with model: @message, local: true, url: area_point_messages_path  do |f|
       .new__top
         .new__top__right
         .new__top__left
@@ -16,25 +16,76 @@
       .new__middle
         .new__middle__wave
           波（悪いーー良い）
-          - f.label :wave
-          .rateYo1
+          #star1
+            - f.label :wave
             = f.hidden_field :wave, :value => @message.wave
         .new__middle__windy
           風（無風ーー強い）
-          - f.label :windy
-          .rateYo2
-            = f.hidden_field :windy, :value => @message.windy
+          #star2
+            - f.label :windy
+            = f.hidden_field :windy, value: @message.windy
         .new__middle__population
           人数（30人--100人）
-          - f.label :population
-          .rateYo3
+          #star3
+            - f.label :population
             = f.hidden_field :population, :value => @message.population
         .new__middle__set
-          セット間隔（長い--早い）
-          - f.label :set
-          .rateYo4
+          セット間隔（長い--早い)
+          #star4
+            - f.label :set
             = f.hidden_field :set, :value => @message.set
+        .new__middle__expected
+          期待値（低い--高い）
+          #star5
+            - f.label :expected
+            = f.hidden_field :expected, :value => @message.expected
       .new__submit
         = f.submit
   
+  :javascript
+    $('#star1').raty({
+      size: 36,
+      starOff: "#{asset_path('star-off.png')}",
+      starOn: "#{asset_path('star-on.png')}",
+      starHalf: "#{asset_path('star-half.png')}",
+      scoreName: 'message[wave]', 
+      score:2.0,
+      half: true, 
+    });
+    $('#star2').raty({
+      size: 36,
+      starOff: "#{asset_path('star-off.png')}",
+      starOn: "#{asset_path('star-on.png')}",
+      starHalf: "#{asset_path('star-half.png')}",
+      scoreName: 'message[windy]', 
+      score:2.0,
+      half: true, 
+    });
+    $('#star3').raty({
+      size: 36,
+      starOff: "#{asset_path('star-off.png')}",
+      starOn: "#{asset_path('star-on.png')}",
+      starHalf: "#{asset_path('star-half.png')}",
+      scoreName: 'message[population]', 
+      score:2.0,
+      half: true, 
+    });
+    $('#star4').raty({
+      size: 36,
+      starOff: "#{asset_path('star-off.png')}",
+      starOn: "#{asset_path('star-on.png')}",
+      starHalf: "#{asset_path('star-half.png')}",
+      scoreName: 'message[set]', 
+      score:2.0,
+      half: true, 
+    });
+    $('#star5').raty({
+      size: 36,
+      starOff: "#{asset_path('star-off.png')}",
+      starOn: "#{asset_path('star-on.png')}",
+      starHalf: "#{asset_path('star-half.png')}",
+      scoreName: 'message[expected]', 
+      score:2.0,
+      half: true, 
+    });
   

@@ -24,12 +24,11 @@ ActiveRecord::Schema.define(version: 2020_04_18_012642) do
     t.text "image"
     t.integer "point_id"
     t.integer "user_id"
-    t.string "wave"
-    t.string "windy"
-    t.string "population"
-    t.string "set"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal "wave", precision: 3, scale: 2
+    t.decimal "windy", precision: 3, scale: 2
+    t.decimal "population", precision: 3, scale: 2
+    t.decimal "set", precision: 3, scale: 2
+    t.decimal "expected", precision: 3, scale: 2
   end
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_012642) do
     t.integer "point_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.text "image"
     t.string "reset_password_token"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false

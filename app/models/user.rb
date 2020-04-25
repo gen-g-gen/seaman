@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   has_many :sns_credentials
+  has_many :messages
+  belongs_to :point
+  
   # has_many :user_points
   # has_many :points, through: :user_points
 

@@ -5,11 +5,12 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.text :image
       t.integer :point_id, foreign_key: true
       t.integer :user_id, foreign_key: true
-      t.string :wave
-      t.string :windy
-      t.string :population
-      t.string :set
-      t.timestamps
+      t.decimal :wave,  precision: 3, scale: 2
+      t.decimal :windy,  precision: 3, scale: 2
+      t.decimal :population,  precision: 3, scale: 2
+      t.decimal :set,  precision: 3, scale: 2
+      t.decimal :expected,  precision: 3, scale: 2
+      
     end
   end
 end

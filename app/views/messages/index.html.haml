@@ -1,16 +1,73 @@
 .wrapper
-  =render "shared/left"
+  .left
+    %input#nav-input.nav-unshown{:type => "checkbox"}/
+    %label#nav-open{:for => "nav-input"}
+      %span
+    %label#nav-close.nav-unshown{:for => "nav-input"}
+
+    #nav-content 
+      - if user_signed_in?
+        = link_to area_point_messages_path(current_user.area_id, current_user.point_id) do
+          %img.no1{src: "/assets/logo.png"}
+      -else
+        =link_to root_path do
+          %img.no1{src: "/assets/logo.png"}
+      %ul.nav-name
+        %li.level0
+          = link_to root_path do
+            = icon('fas', 'map-marker-alt')
+            #none ポイント
+          %ul.level1
+            - @prefectures.each do |pref|
+              %li.level2
+                = pref.name
+                %ul.level3
+                  - @areas.each do |area|
+                    -if pref.id == area.prefecture_id
+                      %li.level4
+                        = link_to area_points_path(area.id) do
+                          = area.name
+                        %ul.level5
+                          - @points.each do |point|
+                            -if area.id== point.area_id
+                              %li.level6
+                                = link_to area_point_messages_path(area.id, point.id) do
+                                  = point.name
+        - if user_signed_in?
+          %li.level0
+            = link_to area_point_messages_path(current_user.area_id, current_user.point_id) do
+              = icon('fas', 'home')
+              #none HOME
+          %li.level0
+            = link_to new_wafe_path do
+              = icon('fab', 'osi')
+              #none 波予測
+          %li.level0
+            = link_to do
+              = icon('fas', 'search', class: "right__top__right__icon")
+              #none TOP検索
+          %li.level0
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %li.level0
+            = link_to new_user_path do
+              = icon('far', 'user')
+              #none ログイン
   .main
     .main__top
       %img.no1{src: "/assets/logo.png"}
     .main__message
-      .tab-panel
-        %ul.tab-group
-          %li.tab.tab-A.is-active
-            =@point.name
-            の波情報
-        .panel-group
-          .panel.tab-A.is-show
+      =@point.name
+      の波情報
+      .main__message__area
+        .main__message__area__box
+          .main__message__area__box__top
+            .main__message__area__box__top__left
+              プロフ画像
+            .main__message__area__box__top__right
+              コメント
+          .main__message__area__box__bottom
+            画像
   .right
     .right__top
       .right__top__left

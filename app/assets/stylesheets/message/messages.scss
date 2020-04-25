@@ -201,15 +201,12 @@
       }
     }
     .main{
-    width: 50%;
-    height:100vh;
-    overflow: scroll;
-    z-index:5;
+      width: 50%;
+      height:100vh;
+      overflow: scroll;
+      z-index:5;
      
       &__top{
-        // background-color:green ;
-        // height:0px;
-        // width:100%;
         .no1{
           display:none;
         }
@@ -217,54 +214,43 @@
       }
       &__message{
         height:100%;
+        width:calc(100% - 12px);
+        padding:5px;
+        list-style:none;
+        border:solid 1px #ccc;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align:center;
+        cursor:pointer;
+        background-color:#0a0a33;
 
-          .tab-group{
-            display: flex;
-            justify-content: left;
-            height:40px;
+        &__area{
+          &__box{
+            width: 100%;
+            border:solid 1px #ccc;
+            border-radius: 10px;
+            &__top{
+              display:flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height:auto;
 
-            .tab{
-              flex-grow: 1;
-              width:130px;
-              padding:5px;
-              list-style:none;
-              border:solid 1px #ccc;
-              border-top-left-radius: 10px;
-              border-top-right-radius: 10px;
-              text-align:center;
-              cursor:pointer;
-              background:#161674;
-              // margin-right:0.3px;
-          }
-            .tab.is-active{
-              background:#0a0a33;
-              border-bottom:none;
-              color:#FFF;
-              transition: all 0.2s ease-out;
-          }
-        }
-        
-        .panel-group{
-            height:100vh;
-            border:solid 0.5px #CCC;
-            border-top:none;
-            background:#eee;
-            background-color:#0a0a33;
+              &__left{
+                width:20%;
+                height:100px;
 
-          .panel{
-              display:none;
+              }
+              &__right{
+                width:80%;
+                height:100px;
+              }
+            }
+            &__bottom{
+              width: 100%;
+              height:auto;
+            }
           }
-          .panel.is-show{
-            display:block;
-          }
-        }
-        
-
-        &__list{
-          
-          height:8%;
-          width:100%;
-          overflow: scroll;
         }
       }
     }

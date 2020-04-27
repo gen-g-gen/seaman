@@ -5,11 +5,11 @@ class MessagesController < ApplicationController
   
 
   def index
-    @messages = @point.messages.includes(:user)
+    # @messages = @point.messages.includes(:user)
     @prefectures = Prefecture.select(:name, :id)
     @area = Area.find(params[:area_id])
     @point = Point.find(params[:point_id])
-    binding.pry
+    # binding.pry
   end
 
   def new
@@ -47,7 +47,6 @@ class MessagesController < ApplicationController
   end
 
   def set_point
-    # binding.pry
     # @point = Point.find(params[:point_id])
   end
   

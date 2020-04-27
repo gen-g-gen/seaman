@@ -22,7 +22,7 @@
           .user__field__box
             = f.label :prefecture
             %br/
-            = f.collection_select :prefecture_id, @prefecture, :id, :name, {include_blank: true},{id: "prefecture_name"}
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: true},{id: "prefecture_name"}
       .user__field__box
         = f.label :email
         %br/

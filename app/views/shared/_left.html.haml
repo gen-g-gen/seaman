@@ -6,7 +6,7 @@
 
   #nav-content 
     - if user_signed_in?
-      = link_to area_point_messages_path(current_user.area_id, current_user.point_id) do
+      = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do
         %img.no1{src: "/assets/logo.png"}
     -else
       =link_to root_path do
@@ -24,7 +24,7 @@
                 - @areas.each do |area|
                   -if pref.id == area.prefecture_id
                     %li.level4
-                      = link_to area_points_path(area.id) do
+                      = link_to new_area_point_path(area.id) do
                         = area.name
                       %ul.level5
                         - @points.each do |point|
@@ -34,7 +34,7 @@
                                 = point.name
       - if user_signed_in?
         %li.level0
-          = link_to area_point_messages_path(current_user.area_id, current_user.point_id) do
+          = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do
             = icon('fas', 'home')
             #none HOME
         %li.level0

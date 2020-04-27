@@ -2,7 +2,7 @@
   =render "shared/left"
   .point
     .point__top
-      point検索
+      pointへ入室
     .point__box
       .point__box__outside
         .point__box__outside__left
@@ -11,8 +11,9 @@
           .point__box__outside__right__content
             - @point.each do |point|
               -if @area.id == point.area_id 
-                .point__box__outside__right__content
-                  = link_to area_point_messages_path(@area, point) do
+                = form_with model: @point, local: true, url: area_point_messages_path  do |f|
+                  .point__box__outside__right__content
+                    - f.submit class: 'point__box__outside__right__content__btn' do
                     = point.name 
-                    %br
+                      %br
   =render "shared/right"

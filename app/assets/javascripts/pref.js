@@ -27,9 +27,9 @@ $(function(){
     var thirdhtml = 
               `
                 <div class = "user__field__box", id = "point"> 
-                  <label> Point </label>
+                  <label> Homeoint </label>
                   <br>
-                  <select class = "user__field__box__point", id = "point_name", name = "user[point_id]">
+                  <select class = "user__field__box__point", id = "point_name", name = "user[homepoint_id]">
                     <option value="---">---</option>
                     ${insertHTML}
                   </select>
@@ -41,8 +41,8 @@ $(function(){
   $("#prefecture_name").on("change", function(){
     var parentCategory = document.getElementById('prefecture_name').value;
     
-    if (parentCategory != "---"){      
-      
+    if (parentCategory != ""){      
+      console.log("if通過")
       $.ajax({
         url: 'get_category_area',
         type: 'GET',

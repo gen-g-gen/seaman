@@ -4,10 +4,9 @@ class UsersController < ApplicationController
   def new
     
     @user = User.new
-    @prefecture = ["---"]
-    @prefecture.concat(Prefecture.pluck(:name,:id))
+    @prefecture = Prefecture.all
     @area = Area.all.includes(:prefecture)
-    @point = Point.all.includes(:area)
+    @point = Homepoint.all.includes(:area)
     # binding.pry
 
     # prefectureが選択された後に動くアクション

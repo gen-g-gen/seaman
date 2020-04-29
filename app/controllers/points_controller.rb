@@ -13,13 +13,17 @@ class PointsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    if @user.user_points.create(point_params)
-      # binding.pry
-      redirect_to area_point_messages_path(params[:area_id], params[:point][:point_id])
+    if user_signed_in?
+      @user = current_user
+      if @user.user_points.create(point_params)
+        # binding.pry
+        redirect_to area_point_messages_path(params[:area_id], params[:point][:point_id])
+      else
+        binding.pry
+        render :new
+      end
     else
-      binding.pry
-      render :new
+      redirect_to controller: :users, action: :new
     end
     # binding.pry
     

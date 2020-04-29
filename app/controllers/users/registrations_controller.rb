@@ -24,7 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    binding.pry
+    
     if params[:sns_auth] == 'true'
       pass = Devise.friendly_token
       params[:user][:password] = pass
@@ -32,6 +32,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     super
   end
+
+
 
   # GET /resource/edit
   # def edit
@@ -78,4 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
+  
 end

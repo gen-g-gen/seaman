@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
   
   resources :areas, only: [:index] do
-    resources :points, only: [:index, :new, :create] do
+    resources :points, only: [:index, :new, :create, :edit, :update] do
       resources :messages, only: [:index, :new, :create, :show ]
     end
   end

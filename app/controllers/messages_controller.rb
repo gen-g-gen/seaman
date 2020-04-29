@@ -5,11 +5,16 @@ class MessagesController < ApplicationController
   
 
   def index
-    # @messages = @point.messages.includes(:user)
-    @prefectures = Prefecture.select(:name, :id)
-    @area = Area.find(params[:area_id])
-    @point = Point.find(params[:point_id])
-    # binding.pry
+    # if user_signed_in? && current_user.id == @user.user_points.id
+      # @messages = @point.messages.includes(:user)
+      @prefectures = Prefecture.select(:name, :id)
+      @area = Area.find(params[:area_id])
+      @point = Point.find(params[:point_id])
+      binding.pry
+    # else
+    #  redirect_to area_point_new_path(params[:area_id])
+    # end
+
   end
 
   def new

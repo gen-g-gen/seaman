@@ -47,7 +47,9 @@
               = icon('fas', 'search', class: "right__top__right__icon")
               #none TOP検索
           %li.level0
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to destroy_user_session_path, method: :delete do
+              = icon('far', 'user')
+              #none ログアウト
         - else
           %li.level0
             = link_to new_user_path do
@@ -60,28 +62,54 @@
       =@point.name
       の波情報
       .main__message__area
-        .main__message__area__box
-          .main__message__area__box__top
-            .main__message__area__box__top__left
-              プロフ画像
-            .main__message__area__box__top__right
-              コメント
-          .main__message__area__box__bottom
-            画像
-  .right
-    .right__top
-      .right__top__left
-        検索窓
-      .right__top__right
-        = icon('fas', 'search', class: "right__top__right__icon")
-        
-    .right__chart
-      トップチャート
+        - @messages.each do |messages|
+          .main__message__area__box
+            .main__message__area__box__top
+              .main__message__area__box__top__left
+                - if messages.image.present?
+                  %img{src: "#{messages.user.image}"}
+                - else
+                  %img.no1{src: "/assets/mini-logo2.png"}
+              .main__message__area__box__top__right
+                .main__message__area__box__top__right__top
+                  .main__message__area__box__top__right__top__name
+                    = messages.user.name
+                    .main__message__area__box__top__right__top__name__style
+                      -if @point.area_id == messages.user.area_id
+                        %p#local @ローカル
+                      -else
+                        %p#visit ビジター
+                  .main__message__area__box__top__right__top__time
+                    -if @time.day == messages.created_at.day
+                      = messages.created_at.strftime("%H:%M")
+                    -elsif @time.day - messages.created_at.day == 1
+                      %p 昨日
+                    -else @time.day - messages.created_at.day >= 2
+                      = messages.created_at.strftime("%m/%d")
+                .main__message__area__box__top__right__bottom
+                  = messages.message
+            .main__message__area__box__bottom
+              - if messages.image.present?
+                %img#imagesize{src: "#{messages.image}"}
     - if user_signed_in?
       .right__icon
         = link_to new_area_point_message_path(@area,@point), class: "btn" do
-          .main__icon_sub
-            -# %p 新規投稿
           .main__icon_btn
-            =image_tag "mini-logo2.png", size: "74x74"
+            =image_tag "mini-logo2.png", size: "120x120"
+  =render "shared/right"
+  
+  -# .right
+  -#   .right__top
+  -#     .right__top__left
+  -#       検索窓
+  -#     .right__top__right
+  -#       = icon('fas', 'search', class: "right__top__right__icon")
+        
+  -#   .right__chart
+  -#     トップチャート
+    -# - if user_signed_in?
+    -#   .right__icon
+    -#     = link_to new_area_point_message_path(@area,@point), class: "btn" do
+    -#       .main__icon_btn
+    -#         =image_tag "mini-logo2.png", size: "74x74"
     

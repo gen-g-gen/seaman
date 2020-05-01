@@ -2,11 +2,11 @@
   =render "shared/left"
   .point
     .point__top
-      pointへ入室
+      =@area.name
     .point__box
       .point__box__outside
-        .point__box__outside__left
-          =@area.name
+        -# .point__box__outside__left
+          
         .point__box__outside__right
           .point__box__outside__right__content
             - @point.each do |point|
@@ -14,7 +14,7 @@
                 - if @area.id == point.area_id 
                   .point__box__outside__right__content__btn
                     = f.hidden_field :point_id, value: point.id 
-                    = f.submit class: 'point__box__outside__right__content__btn', value: "#{point.name}"
+                    = f.submit id: 'point__btn', value: "#{point.name}"
                 
 
   =render "shared/right"

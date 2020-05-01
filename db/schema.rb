@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_085316) do
     t.decimal "population", precision: 3, scale: 2
     t.decimal "set", precision: 3, scale: 2
     t.decimal "expected", precision: 3, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["point_id"], name: "index_messages_on_point_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

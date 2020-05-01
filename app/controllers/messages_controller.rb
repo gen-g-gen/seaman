@@ -1,15 +1,26 @@
 class MessagesController < ApplicationController
   before_action :point, only:[:index,:new, :create]
+  before_action :set_time
   # before_action :set_point
 
   
 
   def index
+    @num = Message.where(point_id: "#{params[:point_id]}")
+    @count = @num.to_a.count
+
+    @wave = @num.sum(:wave) / @count
+    @windy = @num.sum(:windy) / @count
+    @population = @num.sum(:population) / @count
+    @set = @num.sum(:set) / @count
+    @expect = @num.sum(:expected) / @count
+    @array = Array[@wave, @windy, @population, @set, @expec]
+    # binding.pry
 
     if UserPoint.exists?(point_id: params[:point_id], user_id: current_user.id) or User.exists?(homepoint_id: params[:point_id], id: current_user.id)
       # binding.pry
       @point = Point.find(params[:point_id])
-      @messages = @point.messages.includes(:user)
+      @messages = @point.messages.order(created_at: "DESC").includes(:user)
       @prefectures = Prefecture.select(:name, :id)
       @area = Area.find(params[:area_id])
       # binding.pry
@@ -29,10 +40,11 @@ class MessagesController < ApplicationController
     @area = Area.find(params[:area_id])
     @point = Point.find(params[:point_id])
     @message = Message.create(message_params)
-    if @message.save
+    if @message.save 
       # binding.pry
       redirect_to area_point_messages_path(@area.id,@point.id)
     else
+      flash.now[:alert] = 'メッセージを入力してください。'
       render :index
     end
   end
@@ -55,6 +67,10 @@ class MessagesController < ApplicationController
 
   def set_point
     # @point = Point.find(params[:point_id])
+  end
+
+  def set_time
+    @time = Time.now
   end
   
 end

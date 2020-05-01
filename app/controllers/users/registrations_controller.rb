@@ -5,12 +5,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new
+    @prefecture = Prefecture.all
+    # binding.pry
+
+    # prefectureが選択された後に動くアクション
+    def get_category_area
+      @category_area = Area.where(prefecture_id: "#{params[:prefecture_id]}")
+    end
+
+    # areaが選択された後に動くアクション
+    def get_category_point
+      @category_point = Homepoint.where(area_id: "#{params[:area_id]}")
+    end
+
+  end
 
   # POST /resource
   def create
+    
     if params[:sns_auth] == 'true'
       pass = Devise.friendly_token
       params[:user][:password] = pass
@@ -18,6 +32,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     super
   end
+
+
 
   # GET /resource/edit
   # def edit
@@ -64,4 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
+  
 end

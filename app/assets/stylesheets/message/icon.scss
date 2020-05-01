@@ -1,0 +1,40 @@
+.wrapper{
+  
+  .right{
+    
+    &__icon{
+      
+      height: 100px;
+      width: 100px;
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      @include sm{
+        bottom: 60px;
+        right: 15px;
+        height: 60px;
+        width: 60px;
+        
+      }
+      border-radius: 5px;
+      z-index:999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:white;
+      a{
+        &__sub{
+          text-decoration: none;
+          color: #fff;
+          text-align: center;
+          p{
+            font-weight: bold;
+          }
+        }
+        &__btn{
+         
+        }
+      }
+    }
+  }
+}

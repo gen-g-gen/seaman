@@ -1,0 +1,151 @@
+.user{
+  background-image: url(bgi4.jpg);
+  // background-size:  cover;
+  background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+  margin:auto;
+  height:130vh;
+ 
+  &__nav{
+
+    width:40%;
+    // min-width:450px;
+    height:auto;
+    margin:auto;
+   
+    
+    &__box{
+      width:calc(100% - 20px);
+      height:30px;
+      margin:10px;
+      margin-bottom:30px;
+      background-color: rgb(220, 83, 20);
+      border:1px solid white;
+      border-radius: 5px;
+      line-height: 30px;
+      text-align: center;
+      opacity: 1;
+      a{
+        text-decoration: none;
+        color:white;
+      }
+    }
+    #signup{
+      background-color: rgb(20, 220, 143);
+    }
+    #face{
+      background-color: rgb(0, 38, 255);
+      color:#ccc;
+    }
+    #google{
+      background-color: crimson;
+      color:#ccc;
+    }
+    
+  }
+  &__logo{
+    img{
+      width:400px;
+      height:auto;
+    }
+    padding-bottom: 30px;
+    text-align:center;
+    margin:auto;
+  }
+  
+  &__can{
+    font-size: 20px;
+    color:#fff;
+    display:flex;
+    width:calc(80% - 30px);
+    height:auto;
+    border: 1px solid;
+    border-radius: 8px;
+    margin:auto;
+    margin-bottom:30px;
+    padding :5px;
+    &__title{
+      width:30%;
+      // text-align:center;
+    }
+    &__content{
+      width:70%;
+    }
+  }
+  &__use{
+    font-size: 20px;
+    color:#fff;
+    display:flex;
+    width:calc(80% - 30px);
+    height:auto;
+    border: 1px solid;
+    border-radius: 8px;
+    margin:auto;
+    padding :5px;
+    
+    &__title{
+      width:30%;
+      // text-align:center;
+    }
+    &__content{
+      width:70%;
+    }
+  }
+}
+// -----------------------------------
+//             タブレット
+// -----------------------------------
+@include md {
+  .user{
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    &__logo{
+      padding-bottom: 10px;
+      img{
+        width:400px;
+        height:100px;
+      }
+    }
+    &__nav{
+      &__box{
+        font-size:16px
+      }
+    }
+    &__can{
+      font-size:16px
+    }
+    &__use{
+      font-size:16px
+    }
+  }
+}
+// -----------------------------------
+//             スマホ
+// -----------------------------------
+@include sm {
+  .user{
+    &__logo{
+      padding-bottom: 10px;
+      img{
+          width:300px;
+          height:80px;
+      }
+    }
+    &__nav{
+      &__box{
+        font-size:12px
+      }
+    }
+    
+    &__can{
+      font-size:12px
+    }
+    &__use{
+      font-size:12px
+    }
+
+  }
+}
+

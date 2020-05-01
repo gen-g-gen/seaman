@@ -1,0 +1,74 @@
+.user{
+  &__field{
+    width:500px;
+    // min-width:450px;
+    height:auto;
+    margin:auto;
+    border:1px solid white;
+    border-radius: 5px;
+    padding:10px;
+    h2{
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__box{
+      width:calc(100% - 20px);
+      height:auto;
+      margin:10px;
+      line-height: 30px;
+      text-align: center;
+      opacity: 1;
+      label{
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      input{
+        border:1px solid white ;
+        opacity: 0.7;
+      }
+    }
+    &__submit{
+      // border:1px solid white;
+      // border-radius: 5px;
+      // background-color:rgba(8, 161, 221, 0.568);
+      color:#ccc;
+      width:100px;
+      margin-bottom:30px;
+      margin: auto;
+      text-align:center;
+      input{
+        background-color:rgba(8, 161, 221, 0.568);
+        width:100px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+// -----------------------------------
+//             タブレット
+// -----------------------------------
+@include md {
+
+}
+
+// -----------------------------------
+//             スマホ
+// -----------------------------------
+@include sm {
+.user{
+  &__field{
+    width:260px;
+    label{
+      font-size: 14px;
+    }
+    &__box{
+      width:calc(100% - 10px);
+      margin:5px;
+      // height:60px;
+    }
+  }
+}
+}

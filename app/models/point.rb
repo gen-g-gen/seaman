@@ -1,5 +1,6 @@
 class Point < ApplicationRecord
 
+  has_many :messages
   belongs_to :area
   
   has_many :user_points

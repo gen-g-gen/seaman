@@ -12,11 +12,11 @@
 
     &__box{
       width:100%;
-      height: calc(100% - 50px);
+      height: calc(100% - 111px);
       display:flex;
       flex-flow: row wrap;
       overflow:scroll;
-
+      padding-bottom:60px;
       &__outside{
         height:auto;
         // min-height:30px;
@@ -38,8 +38,12 @@
           margin-left:10px;
           width:75%;
           &__content{
-            color:blue;
             
+            margin-bottom:10px;
+            a{
+              color:rgba(204, 204, 204, 0.829);
+            }
+
           }
         }
       }

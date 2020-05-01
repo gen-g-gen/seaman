@@ -1,25 +1,16 @@
 class MessagesController < ApplicationController
   before_action :point, only:[:index,:new, :create]
+  before_action :set_point, only:[:index,:new, :create, :chart]
   before_action :set_time
+  before_action :chart, only:[:index]
   # before_action :set_point
 
   
 
   def index
-    @num = Message.where(point_id: "#{params[:point_id]}")
-    @count = @num.to_a.count
-
-    @wave = @num.sum(:wave) / @count
-    @windy = @num.sum(:windy) / @count
-    @population = @num.sum(:population) / @count
-    @set = @num.sum(:set) / @count
-    @expect = @num.sum(:expected) / @count
-    @array = Array[@wave, @windy, @population, @set, @expec]
-    # binding.pry
-
+    
     if UserPoint.exists?(point_id: params[:point_id], user_id: current_user.id) or User.exists?(homepoint_id: params[:point_id], id: current_user.id)
       # binding.pry
-      @point = Point.find(params[:point_id])
       @messages = @point.messages.order(created_at: "DESC").includes(:user)
       @prefectures = Prefecture.select(:name, :id)
       @area = Area.find(params[:area_id])
@@ -33,12 +24,10 @@ class MessagesController < ApplicationController
   def new
       @message = Message.new
       @area = Area.find(params[:area_id])
-      @point = Point.find(params[:point_id])
   end
 
   def create
     @area = Area.find(params[:area_id])
-    @point = Point.find(params[:point_id])
     @message = Message.create(message_params)
     if @message.save 
       # binding.pry
@@ -66,11 +55,29 @@ class MessagesController < ApplicationController
   end
 
   def set_point
-    # @point = Point.find(params[:point_id])
+    @point = Point.find(params[:point_id])
   end
 
   def set_time
     @time = Time.now
+  end
+
+  def chart
+    # pointの３日間のデータを取得
+    @num = Message.where(point_id: "#{params[:point_id]}").where(created_at: (Time.now.midnight - 3.day)..Time.now.midnight)
+    @count = @num.to_a.count
+   
+    # 平均値の取得
+    @wave = @num.sum(:wave) / @count
+    @windy = @num.sum(:windy) / @count
+    @population = @num.sum(:population) / @count
+    @set = @num.sum(:set) / @count
+    @expect = @num.sum(:expected) / @count
+    # 配列化
+    @array = Array[@wave, @windy, @population, @set, @expect]
+    # gonに変数の代入
+    gon.array = @array
+    gon.pointname = @point.name
   end
   
 end

@@ -40,14 +40,51 @@ class MessagesController < ApplicationController
   
   def show
   end
+
+  def search
+    return nil if params[:keyword] == ""
+    @point_search= Point.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: params[:point_id]).limit(5)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def addchart
+    
+    # pointの３日間のデータを取得
+    @messages = Message.where(point_id: "#{params[:addpoint_id]}")
+    
+    if @messages.exists? 
+      @num = @messages.where(created_at: (Time.now.midnight - 3.day)..Time.now)
+      @count = @num.to_a.count
+    
+      # 平均値の取得
+      @wave = @num.sum(:wave) / @count
+      @windy = @num.sum(:windy) / @count
+      @population = @num.sum(:population) / @count
+      @set = @num.sum(:set) / @count
+      @expect = @num.sum(:expected) / @count
+      # 配列化
+      # @array = {wave: @wave, windy: @windy, population: @population, set: @set, expect: @expect}
+      @array = Array[@wave, @windy, @population, @set, @expect]
+
+      respond_to do |format|
+        format.json
+      end
+
+    else
+      @array = [2,2,2,2,2]
+    end
+      # binding.pry
+  end
  
   private
+ 
   def point
-    
     @prefectures = Prefecture.select(:name, :id)
     @areas = Area.select(:name, :id, :prefecture_id)
     @points = Point.select(:name, :id, :area_id)
-  
   end  
 
   def message_params
@@ -63,21 +100,36 @@ class MessagesController < ApplicationController
   end
 
   def chart
-    # pointの３日間のデータを取得
-    @num = Message.where(point_id: "#{params[:point_id]}").where(created_at: (Time.now.midnight - 3.day)..Time.now.midnight)
-    @count = @num.to_a.count
-   
-    # 平均値の取得
-    @wave = @num.sum(:wave) / @count
-    @windy = @num.sum(:windy) / @count
-    @population = @num.sum(:population) / @count
-    @set = @num.sum(:set) / @count
-    @expect = @num.sum(:expected) / @count
-    # 配列化
-    @array = Array[@wave, @windy, @population, @set, @expect]
-    # gonに変数の代入
-    gon.array = @array
+    
     gon.pointname = @point.name
+    # pointの３日間のデータを取得
+    @messages = Message.where(point_id: "#{params[:point_id]}")
+
+    if @messages.exists? 
+      @num = @messages.where(created_at: (Time.now.midnight - 3.day)..Time.now)
+      @count = @num.to_a.count
+    
+      # 平均値の取得
+      @wave = @num.sum(:wave) / @count
+      @windy = @num.sum(:windy) / @count
+      @population = @num.sum(:population) / @count
+      @set = @num.sum(:set) / @count
+      @expect = @num.sum(:expected) / @count
+      # 配列化
+      @array = Array[@wave, @windy, @population, @set, @expect]
+      # gonに変数の代入
+      gon.array = @array
+      
+      respond_to do |format|
+        format.html
+        format.json
+      end
+    else
+      gon.array = [2,2,2,2,2]
+    end
+
   end
+
+  
   
 end

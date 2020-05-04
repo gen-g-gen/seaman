@@ -677,10 +677,12 @@
       }
     }
     .right{
-      display: none;
-      &__icon{
-        
-      }
+      z-index: 999;
+      position: fixed;
+      right: -110%;
+      height:calc(100% - 90px);
+      width:90%;
+      padding: 20px 10px 10px 10px;
     }
   }
 }

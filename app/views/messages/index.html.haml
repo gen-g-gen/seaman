@@ -37,7 +37,7 @@
             = link_to new_wafe_path do
               = icon('fab', 'osi')
               #none 波予測
-          %li.searchBlock
+          %li.searchBlock#slide
             = icon('fas', 'search', class: "topSearch")
             %br/
             #none.topSearch.topfont TOP検索
@@ -91,19 +91,3 @@
           .main__icon_btn
             =image_tag "mini-logo2.png"
   =render "shared/right"
-  
-  -# .right
-  -#   .right__top
-  -#     .right__top__left
-  -#       検索窓
-  -#     .right__top__right
-  -#       = icon('fas', 'search', class: "right__top__right__icon")
-        
-  -#   .right__chart
-  -#     トップチャート
-    -# - if user_signed_in?
-    -#   .right__icon
-    -#     = link_to new_area_point_message_path(@area,@point), class: "btn" do
-    -#       .main__icon_btn
-    -#         =image_tag "mini-logo2.png", size: "74x74"
-    

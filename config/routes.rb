@@ -28,7 +28,12 @@ Rails.application.routes.draw do
   
   resources :areas, only: [:index] do
     resources :points, only: [:index, :new, :create, :edit, :update] do
-      resources :messages, only: [:index, :new, :create, :show ]
+      resources :messages, only: [:index, :new, :create, :show ] do
+        collection do
+          get 'search', defaults: { format: 'json' }
+          get 'addchart', defaults: { format: 'json' }
+        end
+      end
     end
   end
   

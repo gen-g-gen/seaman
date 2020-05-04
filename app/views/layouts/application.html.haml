@@ -6,9 +6,11 @@
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css", :rel => "stylesheet"}
     %script{src: "https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"}
     %script{src: "https://api.windy.com/assets/map-forecast/libBoot.js"}
+    
     %title sEAMAN
     = csrf_meta_tags
     = csp_meta_tag
+    = include_gon
     = stylesheet_link_tag    'application'
     = javascript_include_tag 'application'
   %body

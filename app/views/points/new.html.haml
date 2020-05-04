@@ -13,8 +13,7 @@
               = form_with model: [@point_new], :url => { :controller => :points, :action => :create },local: true do |f|
                 - if @area.id == point.area_id 
                   .point__box__outside__right__content__btn
-                    = f.hidden_field :point_id, value: point.id 
-                    = f.submit id: 'point__btn', value: "#{point.name}"
-                
+                    = f.hidden_field :point_id, value: point.id ,id: "#{point.id}"
+                    = f.submit class: 'point__btn', value: "#{point.name}", data: { disable_with: "送信中..." }
 
-  =render "shared/right"
+

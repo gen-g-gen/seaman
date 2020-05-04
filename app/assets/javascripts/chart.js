@@ -1,5 +1,7 @@
   $(function(){
- 
+    if (document.location.href.match(/\/areas\/\d+\/points\/\d+\/messages/))  {
+      
+
     // ----------------------------
     //           chart.js
     // ----------------------------
@@ -37,6 +39,11 @@
                 //凡例の設定
                 legend: {
                   position: 'bottom',
+                  labels: {
+                    fontSize: 15,
+                    fontColor: "#fffafa",
+                    padding: 20,
+                  },
                 },
                 // レスポンシブ指定
                 responsive: true,
@@ -62,6 +69,14 @@
                     display: true,
                     color: "limegreen"
                   }
+                },
+                layout: {
+                  padding: {
+                      left: 0,
+                      right: 0,
+                      top: 0,
+                      bottom: 0,
+                  }
                 }
             }
         }
@@ -75,7 +90,7 @@
     var pointName = gon.pointname
     var newPointName = "検索してください"
    
-    var data = [['波', '風', '人口', 'セット', '期待値'],
+    var data = [['波のサイズ', '風向', '人数', 'セット間隔', '期待値'],
                 data1,
                 [0,0,0,0,0]]  
     var labels =  [ pointName , newPointName ]
@@ -89,14 +104,9 @@
       labels.pop();
       data.push(newdata);
       labels.push(newlabel);
-      
-      console.log(data)
-      console.log(labels)
       drawGraph(data, labels);
     }
   
-    
-
     function addPoint(point){
       var html = `
                   <div class="result clearfix">
@@ -126,13 +136,13 @@
       var input = $('#search').val();
       
       $.ajax({
+        url: 'messages/search' ,
         type: 'GET',
-        url: 'messages/search',
         data: {keyword: input},
         dataType: 'json'
-        
       })
       .done(function(points) {
+        console.log("ok)");
         $("#result__area").empty();
   
          if (points.length !== 0) {
@@ -146,7 +156,7 @@
         }
       })
       .fail(function() {
-        alert("ユーザー検索に失敗しました");
+        alert("ポイント検索に失敗しました");
       });
     });
     $(document).on('click','.result-search-btn', function(){
@@ -178,7 +188,6 @@
             addData(newdata, newlabel);
 
          } else {
-          console.log("pointsない");
           pointData = [2,2,2,2,2]
          }
         })
@@ -186,6 +195,9 @@
           alert("point検索に失敗しました");
         });
     });
+
+    
+  }
 
   });
    

@@ -1,9 +1,4 @@
 .left
-  %input#nav-input.nav-unshown{:type => "checkbox"}/
-  %label#nav-open{:for => "nav-input"}
-    %span
-  %label#nav-close.nav-unshown{:for => "nav-input"}
-
   #nav-content 
     - if user_signed_in?
       = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do
@@ -41,10 +36,6 @@
           = link_to new_wafe_path do
             = icon('fab', 'osi')
             #none 波予測
-        %li.level0
-          = link_to do
-            = icon('fas', 'search', class: "right__top__right__icon")
-            #none TOP検索
         %li.level0  
           = link_to destroy_user_session_path, method: :delete do
             = icon('far', 'user')

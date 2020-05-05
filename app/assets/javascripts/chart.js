@@ -90,7 +90,7 @@
     var pointName = gon.pointname
     var newPointName = "検索してください"
    
-    var data = [['波のサイズ', '風向', '人数', 'セット間隔', '期待値'],
+    var data = [['波のサイズ', '風', '人数', 'セット間隔', '期待値'],
                 data1,
                 [0,0,0,0,0]]  
     var labels =  [ pointName , newPointName ]

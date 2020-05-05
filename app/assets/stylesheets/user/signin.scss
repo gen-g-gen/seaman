@@ -2,10 +2,11 @@
   &__field{
     width:500px;
     // min-width:450px;
-    height:auto;
+    height:calc(100% - 200px);
     margin:auto;
     border:1px solid white;
-    border-radius: 5px;
+    overflow: scroll;
+    
     padding:10px;
     h2{
       color: white;
@@ -13,10 +14,17 @@
       font-weight: bold;
       text-align: center;
     }
+    #error_explanation{
+      color:red;
+      font-weight:bold;
+      text-align: center;
+    }
     &__box{
-      width:calc(100% - 20px);
+      color: white;
+      font-size: 18px;
+      width:calc(100% - 14px);
       height:auto;
-      margin:10px;
+      margin:7px;
       line-height: 30px;
       text-align: center;
       opacity: 1;
@@ -28,16 +36,50 @@
       input{
         border:1px solid white ;
         opacity: 0.7;
+        width: 35%;
+        border-radius: 5px;
+      }
+      #prefecture_name{
+        background-color: white;
+        width: 35%;
+        opacity: 0.6;
+      }
+      #area_name{
+        background-color: white;
+        width: 35%;
+        opacity: 0.6;
+      }
+      #point_name{
+        background-color: white;
+        width: 35%;
+        opacity: 0.6;
+      }
+      #user_image{
+        background-color: white;
+        width: 27%;
+        opacity: 0.6;
+        input{
+          background-color: white;
+        
+        opacity: 0.6;
+        color:black;
+        }
+      }
+      #user_remember_me{
+        width:20px;
+      }
+      #gonefile{
+        input{
+          display: none;
+        }
       }
     }
     &__submit{
-      // border:1px solid white;
-      // border-radius: 5px;
-      // background-color:rgba(8, 161, 221, 0.568);
+      
       color:#ccc;
       width:100px;
-      margin-bottom:30px;
-      margin: auto;
+      margin:20px auto;
+      // margin: auto;
       text-align:center;
       input{
         background-color:rgba(8, 161, 221, 0.568);
@@ -61,6 +103,7 @@
 .user{
   &__field{
     width:260px;
+    
     label{
       font-size: 14px;
     }
@@ -68,6 +111,24 @@
       width:calc(100% - 10px);
       margin:5px;
       // height:60px;
+      input{
+        font-size:12px;
+        height:25px;
+        border-radius: 5px;
+        width: 45%;
+      }
+      #prefecture_name{
+        width: 45%;
+      }
+      #area_name{
+        width: 45%;
+      }
+      #point_name{
+        width: 45%;
+      }
+      #user_image{
+        width: 40%;
+      }
     }
   }
 }

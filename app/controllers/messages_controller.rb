@@ -34,7 +34,7 @@ class MessagesController < ApplicationController
       redirect_to area_point_messages_path(@area.id,@point.id)
     else
       flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
+      render :new
     end
   end
   

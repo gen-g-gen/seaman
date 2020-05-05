@@ -6,12 +6,18 @@ class User < ApplicationRecord
   
   has_many :sns_credentials
   has_many :messages
-  belongs_to :homepoint
+  belongs_to :homepoint, optional: true
 
   has_many :user_points
   has_many :points, through: :user_points
 
   mount_uploader :image, ImageUploader
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :nickname,              presence: true, uniqueness: true
+  validates :email,                 presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  validates :homepoint_id,          presence: true
 
   
   def self.from_omniauth(auth)

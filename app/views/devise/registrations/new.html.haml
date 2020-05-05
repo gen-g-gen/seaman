@@ -10,9 +10,10 @@
         %br/
         = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
       .user__field__box
-        = f.label :image
-        %br/
-        = f.file_field :image, autofocus: true, autocomplete: "image"
+        = f.label :image, id: "gonefile" do
+          = icon('far', 'image')
+          ファイルの選択
+          = f.file_field :image, autofocus: true, autocomplete: "image"
       .user__field__box
         = f.label :name
         %br/
@@ -41,6 +42,6 @@
           = f.label :password_confirmation
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
-      .user__field__submit
+      .user__field__submit#pass
         = f.submit "Sign up"
 

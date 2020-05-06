@@ -3,20 +3,18 @@
   .right{
     
     &__icon{
-      
-      height: 100px;
       width: 100px;
       position: fixed;
       bottom: 50px;
-      right: 50px;
+      right: 100px;
       @include md{
-        height: 70px;
+        right: 50px;
         width: 70px;
       }
 
       @include sm{
         bottom: 50px;
-        right: -25px;
+        right: -15px;
         height: 100px;
         width: 100px;
         

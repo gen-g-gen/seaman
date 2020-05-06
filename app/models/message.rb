@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   belongs_to :point,      optional: true
  
 
-  validates :message,          presence: true, unless: :image?
+  validates :message,          presence: true, unless: :image?, length: { maximum: 100 }  
   validates :user_id,          presence: true
 
 

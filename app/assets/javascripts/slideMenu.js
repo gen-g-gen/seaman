@@ -6,11 +6,11 @@
 $(function() {
 
   $('#slide').on('click', function(){
-    if($('#slide').hasClass('off')){
-      $('#slide').removeClass('off');
+    if($('#showright').hasClass('off')){
+      $('#showright').removeClass('off');
       $('#showright').animate({'marginRight':'110%'},500);
     }else{
-      $('#slide').addClass('off');
+      $('#showright').addClass('off');
       $('#showright').animate({'marginRight':'0%'},500);
     }
   });

@@ -1,7 +1,6 @@
 .user{
   &__field{
     width:500px;
-    // min-width:450px;
     height:calc(100% - 200px);
     margin:auto;
     border:1px solid white;
@@ -9,7 +8,7 @@
     
     padding:10px;
     h2{
-      color: white;
+      color: $white;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
@@ -20,7 +19,7 @@
       text-align: center;
     }
     &__box{
-      color: white;
+      color: $white;
       font-size: 18px;
       width:calc(100% - 14px);
       height:auto;
@@ -29,7 +28,7 @@
       text-align: center;
       opacity: 1;
       label{
-        color: white;
+        color: $white;
         font-size: 18px;
         font-weight: bold;
       }
@@ -40,26 +39,26 @@
         border-radius: 5px;
       }
       #prefecture_name{
-        background-color: white;
+        background-color: $white;
         width: 35%;
         opacity: 0.6;
       }
       #area_name{
-        background-color: white;
+        background-color: $white;
         width: 35%;
         opacity: 0.6;
       }
       #point_name{
-        background-color: white;
+        background-color: $white;
         width: 35%;
         opacity: 0.6;
       }
       #user_image{
-        background-color: white;
+        background-color: $white;
         width: 27%;
         opacity: 0.6;
         input{
-          background-color: white;
+          background-color: $white;
         
         opacity: 0.6;
         color:black;
@@ -76,10 +75,9 @@
     }
     &__submit{
       
-      color:#ccc;
+      color:$white;
       width:100px;
       margin:20px auto;
-      // margin: auto;
       text-align:center;
       input{
         background-color:rgba(8, 161, 221, 0.568);
@@ -110,7 +108,6 @@
     &__box{
       width:calc(100% - 10px);
       margin:5px;
-      // height:60px;
       input{
         font-size:12px;
         height:25px;

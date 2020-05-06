@@ -9,14 +9,12 @@ class PointsController < ApplicationController
     @areas = Area.select(:name, :id, :prefecture_id)
     @points = Point.select(:name, :id, :area_id)
     
-    # binding.pry
   end
 
   def create
     if user_signed_in?
       @user = current_user
       if @user.user_points.create(point_params)
-        # binding.pry
         redirect_to area_point_messages_path(params[:area_id], params[:point][:point_id])
       else
         binding.pry
@@ -25,17 +23,7 @@ class PointsController < ApplicationController
     else
       redirect_to controller: :users, action: :new
     end
-    # binding.pry
     
-    
-    # @point = Point.new(point_params)
-    # if @point.save
-    #   binding.pry
-    #   redirect_to root_path, notice: `入室しました`
-    # else
-    #   render :new
-    # end
-
   end
 
   private

@@ -3,18 +3,15 @@ class MessagesController < ApplicationController
   before_action :set_point, only:[:index,:new, :create, :chart]
   before_action :set_time
   before_action :chart, only:[:index]
-  # before_action :set_point
 
   
 
   def index
     
     if UserPoint.exists?(point_id: params[:point_id], user_id: current_user.id) or User.exists?(homepoint_id: params[:point_id], id: current_user.id)
-      # binding.pry
       @messages = @point.messages.order(created_at: "DESC").includes(:user)
       @prefectures = Prefecture.select(:name, :id)
       @area = Area.find(params[:area_id])
-      # binding.pry
     else
      redirect_to new_area_point_path(params[:area_id])
     end
@@ -30,7 +27,6 @@ class MessagesController < ApplicationController
     @area = Area.find(params[:area_id])
     @message = Message.create(message_params)
     if @message.save 
-      # binding.pry
       redirect_to area_point_messages_path(@area.id,@point.id)
     else
       flash.now[:alert] = 'メッセージを入力してください。'
@@ -51,10 +47,7 @@ class MessagesController < ApplicationController
   end
 
   def addchart
-    
-    # pointの３日間のデータを取得
     @messages = Message.where(point_id: "#{params[:addpoint_id]}")
-    
     if @messages.exists? 
       @num = @messages.where(created_at: (Time.now.midnight - 3.day)..Time.now)
       @count = @num.to_a.count
@@ -65,8 +58,7 @@ class MessagesController < ApplicationController
       @population = @num.sum(:population) / @count
       @set = @num.sum(:set) / @count
       @expect = @num.sum(:expected) / @count
-      # 配列化
-      # @array = {wave: @wave, windy: @windy, population: @population, set: @set, expect: @expect}
+
       @array = Array[@wave, @windy, @population, @set, @expect]
 
       respond_to do |format|
@@ -76,7 +68,6 @@ class MessagesController < ApplicationController
     else
       @array = [2,2,2,2,2]
     end
-      # binding.pry
   end
  
   private
@@ -115,7 +106,7 @@ class MessagesController < ApplicationController
       @population = @num.sum(:population) / @count
       @set = @num.sum(:set) / @count
       @expect = @num.sum(:expected) / @count
-      # 配列化
+
       @array = Array[@wave, @windy, @population, @set, @expect]
       # gonに変数の代入
       gon.array = @array

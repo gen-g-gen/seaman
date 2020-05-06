@@ -20,11 +20,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :waves, only: [:new] do
-    # member do
-    #   get 'area'
-    # end
-  end
+  resources :waves, only: [:new]
   
   resources :areas, only: [:index] do
     resources :points, only: [:index, :new, :create, :edit, :update] do

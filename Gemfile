@@ -89,3 +89,4 @@ gem "omniauth-rails_csrf_protection"
 gem 'active_hash'
 gem 'chart-js-rails'
 gem 'gon'
+gem 'fog-aws'

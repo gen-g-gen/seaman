@@ -18,10 +18,16 @@
     
   }
   .new{
+    
     width:500px;
+    overflow: scroll;
     @include sm {
       width:100%;
       min-width:300px;
+      overflow: scroll;
+      form{
+        height:auto;
+      }
     }
     height:calc(100vh - 100px);
     margin:0 auto;

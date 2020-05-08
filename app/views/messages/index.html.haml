@@ -61,7 +61,7 @@
             .main__message__area__box__top
               .main__message__area__box__top__left
                 - if messages.image.present?
-                  = image_tag messages.user.image
+                  = image_tag messages.user.image.url
                   -# %img{src: "#{messages.user.image}"}
                 - else
                   = image_tag asset_path('mini-logo2.png'),class: "no1"
@@ -85,7 +85,7 @@
                   = messages.message
             .main__message__area__box__bottom
               - if messages.image.present?
-                = image_tag messages.image, id: "imagesize"
+                = image_tag messages.image.url, id: "imagesize"
                 -# %img#imagesize{src: "#{messages.image}"}
     - if user_signed_in?
       .right__icon

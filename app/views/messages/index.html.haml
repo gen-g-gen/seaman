@@ -3,10 +3,10 @@
     #nav-content 
       - if user_signed_in?
         = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do
-          %img.no1{src: "/assets/logo.png"}
+          = image_tag asset_path('logo.png'),class: "no1"
       -else
         =link_to root_path do
-          %img.no1{src: "/assets/logo.png"}
+          = image_tag asset_path('logo.png'),class: "no1"
       %ul.nav-name
         %li.level0
           = link_to root_path do
@@ -52,7 +52,7 @@
               #none ログイン
   .main
     .main__top
-      %img.no1{src: "/assets/logo.png"}
+      = image_tag asset_path('logo.png'),class: "no1"
     .main__message
       =@point.name
       .main__message__area
@@ -61,9 +61,10 @@
             .main__message__area__box__top
               .main__message__area__box__top__left
                 - if messages.image.present?
-                  %img{src: "#{messages.user.image}"}
+                  = image_tag messages.user.image
+                  -# %img{src: "#{messages.user.image}"}
                 - else
-                  %img.no1{src: "/assets/mini-logo2.png"}
+                  = image_tag asset_path('mini-logo2.png'),class: "no1"
               .main__message__area__box__top__right
                 .main__message__area__box__top__right__top
                   .main__message__area__box__top__right__top__name
@@ -84,10 +85,11 @@
                   = messages.message
             .main__message__area__box__bottom
               - if messages.image.present?
-                %img#imagesize{src: "#{messages.image}"}
+                = image_tag messages.image, id: "imagesize"
+                -# %img#imagesize{src: "#{messages.image}"}
     - if user_signed_in?
       .right__icon
         = link_to new_area_point_message_path(@area,@point), class: "btn" do
           .main__icon_btn
-            =image_tag "mini-logo2.png"
+            = image_tag asset_path('mini-logo2.png')
   =render "shared/right"

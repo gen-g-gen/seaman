@@ -1,6 +1,6 @@
 .user
   .user__logo
-    %img{src: "/assets/logo.png"}
+    = image_tag asset_path('logo.png')
   .user__field
     %h2 Log in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

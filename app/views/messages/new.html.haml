@@ -1,7 +1,7 @@
 .outside
   .logo
     =link_to root_path do
-      %img.no1{src: "/assets/logo.png"}
+      = image_tag asset_path('logo.png'),class: "no1"
   .new
     = form_with model: @message, local: true, url: area_point_messages_path  do |f|
       .new__top

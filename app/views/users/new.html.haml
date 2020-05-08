@@ -1,6 +1,6 @@
 .user
   .user__logo
-    %img{src: "/assets/logo.png"}
+    = image_tag asset_path('logo.png')
   .user__nav
     .user__nav__box#login
       = link_to user_session_path do

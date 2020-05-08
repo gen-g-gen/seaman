@@ -2,10 +2,10 @@
   #nav-content 
     - if user_signed_in?
       = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do
-        %img.no1{src: "/assets/logo.png"}
+        = image_tag asset_path('logo.png'),class: "no1"
     -else
       =link_to root_path do
-        %img.no1{src: "/assets/logo.png"}
+        = image_tag asset_path('logo.png'),class: "no1"
     %ul.nav-name
       %li.level0
         = link_to root_path do

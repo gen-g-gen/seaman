@@ -12,11 +12,11 @@
 
   &__box{
     width:100%;
-    height: calc(100% - 111px);
+    height: calc(100% - 151px);
     display:flex;
     flex-flow: row wrap;
     overflow:scroll;
-    padding-bottom:60px;
+    padding-bottom:100px;
     &__outside{
       height:auto;
       // min-height:30px;

@@ -552,7 +552,7 @@
       bottom:0px;
       left:0px;
       right:0px;
-      height:60px;
+      height:100px;
       width:100%;
 
       #nav-content {
@@ -638,7 +638,7 @@
       }
       &__message{
         height:auto;
-        min-height:calc(100% - 112px);
+        min-height:calc(100% - 152px);
         width:calc(100% - 2px);
         padding:0px;
         &__area{
@@ -666,7 +666,7 @@
       z-index: 999;
       position: fixed;
       right: -110%;
-      height:calc(100% - 90px);
+      height:calc(100% - 130px);
       width:calc(100% - 20px);
       padding: 20px 10px 10px 10px;
       margin-right: 0%;

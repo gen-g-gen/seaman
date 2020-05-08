@@ -142,7 +142,6 @@
         dataType: 'json'
       })
       .done(function(points) {
-        console.log("ok)");
         $("#result__area").empty();
   
          if (points.length !== 0) {

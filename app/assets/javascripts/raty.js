@@ -7,5 +7,4 @@
 //     scoreName: 'post[rate]',
 //     half: true,
 //   });
-//   console.log("ok");
 // });

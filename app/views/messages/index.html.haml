@@ -60,9 +60,8 @@
           .main__message__area__box
             .main__message__area__box__top
               .main__message__area__box__top__left
-                - if messages.image.present?
+                - if messages.user.image.present?
                   = image_tag messages.user.image.url
-                  -# %img{src: "#{messages.user.image}"}
                 - else
                   = image_tag asset_path('mini-logo2.png'),class: "no1"
               .main__message__area__box__top__right

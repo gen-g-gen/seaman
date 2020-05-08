@@ -41,8 +41,7 @@ $(function(){
   $("#prefecture_name").on("change", function(){
     var parentCategory = document.getElementById('prefecture_name').value;
     
-    if (parentCategory != ""){      
-      // console.log("if通過")
+    if (parentCategory != ""){ 
       $.ajax({
         url: 'get_category_area',
         type: 'GET',
@@ -71,7 +70,6 @@ $(function(){
   $(".user__field__map").on("change", '#area_name', function(){
     var childContent = $('#area_name option:selected').data('category');
     var childContentvalue = document.getElementById('area_name').value;
-    // console.log(childContentvalue);
     if (childContentvalue != "---"){
       
       $.ajax({

@@ -27,6 +27,7 @@ class MessagesController < ApplicationController
     @area = Area.find(params[:area_id])
     @message = Message.create(message_params)
     if @message.save 
+      # binding.pry
       redirect_to area_point_messages_path(@area.id,@point.id)
     else
       flash.now[:alert] = 'メッセージを入力してください。'

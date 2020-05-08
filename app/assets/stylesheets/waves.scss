@@ -1,8 +1,6 @@
 .map{
   width:76.8%;
   height: 100vh;
-  overflow: scroll;
-
   #windy{
     height:100vh;
     width:100%;
@@ -20,7 +18,6 @@
     width:100%;
     height: 100vh;
     margin:auto;
-    overflow: scroll;
 
     #windy{
       height:calc(100% - 110px);

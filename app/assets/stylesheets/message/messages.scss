@@ -637,8 +637,7 @@
         }
       }
       &__message{
-        height:auto;
-        min-height:calc(100% - 152px);
+        height: calc(100% - 170px);
         width:calc(100% - 2px);
         padding:0px;
         &__area{

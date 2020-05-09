@@ -2,14 +2,14 @@
   .user__logo
     = image_tag asset_path('logo.png')
   .user__nav
+    .user__nav__box#signup
+      = link_to new_user_registration_path do
+        .user__nav__box__btn
+          ユーザー登録 
     .user__nav__box#login
       = link_to user_session_path do
         .user__nav__box__btn
           ログイン 
-    .user__nav__box#signup
-      = link_to new_user_registration_path do
-        .user__nav__box__btn
-          Signin 
     .user__nav__box#face
       = link_to user_facebook_omniauth_authorize_path, method: :post do
         .user__nav__box__btn

@@ -2,46 +2,43 @@
   .user__logo
     = image_tag asset_path('logo.png')
   .user__field
-    %h2 Sign up
+    %h2 Sign up(全項目入力必須)
     = form_with model:[@user], url: registration_path(resource_name), id: 'new_user', class: 'new_user', local: true do |f|
       = render "devise/shared/error_messages", resource: resource
       .user__field__box
-        = f.label :nickname
+        ニックネーム
         %br/
         = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
       .user__field__box
         = f.label :image, id: "gonefile" do
           = icon('far', 'image')
-          ファイルの選択
+          ユーザー画像選択
           = f.file_field :image, autofocus: true, autocomplete: "image"
       .user__field__box
-        = f.label :name
+        お名前
         %br/
         = f.text_field :name, autofocus: true, autocomplete: "name"
       .user__field__map
         .user__field__map__group#prefecture
           .user__field__box
-            = f.label :prefecture
+            ホームポイントの選択
             %br/
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: true},{id: "prefecture_name"}
       .user__field__box
-        = f.label :email
+        メールアドレス
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
       - if @sns_id.present?
         = hidden_field_tag :sns_auth, true
       - else
         .user__field__box
-          = f.label :password
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} 文字以上)
+          パスワード(６文字以上)
           %br/
           = f.password_field :password, autocomplete: "new-password"
         .user__field__box
-          = f.label :password_confirmation
+          パスワード(確認用)
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
       .user__field__submit#pass
-        = f.submit "Sign up"
+        = f.submit "登録"
 

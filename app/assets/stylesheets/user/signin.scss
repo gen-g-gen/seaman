@@ -101,16 +101,18 @@
 .user{
   &__field{
     width:260px;
-    
+    height: calc(100% - 118px);
     label{
       font-size: 14px;
     }
     &__box{
       width:calc(100% - 10px);
       margin:5px;
+      font-size: 12px;
       input{
         font-size:12px;
-        height:25px;
+        height:20px;
+        line-height:20px;
         border-radius: 5px;
         width: 45%;
       }

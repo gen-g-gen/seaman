@@ -1,13 +1,14 @@
 
 
 .user{
-  background-image: image-url("bgi4-min.png");
-  background-position: left top;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+  // background-image: image-url("bgi4-min.png");
+  // background-position: left top;
+	// background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  background-color: $blue;
   margin:auto;
   height:100vh;
- 
+  overflow:scroll;
   &__nav{
 
     width:40%;

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get '/users/auth/facebook/get_category_point', to: 'users/omniauth_callbacks#get_category_point', defaults: { format: 'json' }
     get '/users/auth/google_oauth2/get_category_area', to: 'users/omniauth_callbacks#get_category_area', defaults: { format: 'json' }
     get '/users/auth/google_oauth2/get_category_point', to: 'users/omniauth_callbacks#get_category_point', defaults: { format: 'json' }
+    get '/get_category_area', to: 'users#get_category_area', defaults: { format: 'json' }
+    get '/get_category_point', to: 'users#get_category_point', defaults: { format: 'json' }
   end
   
   root 'areas#index'

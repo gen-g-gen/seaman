@@ -220,11 +220,27 @@
         border:solid 1px $white;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        text-align:centr;
         background-color:$blue;
-        text-align: center;
         font-size:20px;
 
+        &__name{
+          display:flex;
+          align-items: center;
+          
+          &__left{
+            width:45%;
+            text-align:center;
+            a{
+              text-decoration: none;
+              color:$white;
+              font-size:13px;
+            }
+          }
+          &__center{
+            width:55%;
+          }
+        }
+        
         &__area{
           overflow: scroll;
           height:calc(100vh - 35px);

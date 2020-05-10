@@ -54,7 +54,13 @@
     .main__top
       = image_tag asset_path('logo.png'),class: "no1"
     .main__message
-      =@point.name
+      .main__message__name
+        .main__message__name__left
+          = link_to new_area_point_path(@area.id) do
+            = icon('fas', 'arrow-left')
+            = @area.name
+        .main__message__name__center
+          =@point.name
       .main__message__area
         - @messages.each do |messages|
           .main__message__area__box

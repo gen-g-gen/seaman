@@ -21,12 +21,12 @@
                     %li.level4
                       = link_to new_area_point_path(area.id) do
                         = area.name
-                      %ul.level5
-                        - @points.each do |point|
-                          -if area.id== point.area_id
-                            %li.level6
-                              = link_to area_point_messages_path(area.id, point.id) do
-                                = point.name
+                      -# %ul.level5
+                      -#   - @points.each do |point|
+                      -#     -if area.id== point.area_id
+                      -#       %li.level6
+                      -#         = link_to area_point_messages_path(area.id, point.id) do
+                      -#           = point.name
       - if user_signed_in?
         %li.level0
           = link_to area_point_messages_path(current_user.area_id, current_user.homepoint_id) do

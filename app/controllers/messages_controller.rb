@@ -50,15 +50,38 @@ class MessagesController < ApplicationController
     @messages = Message.where(point_id: "#{params[:addpoint_id]}")
     if @messages.exists? 
       @num = @messages.where(created_at: (Time.now.midnight - 3.day)..Time.now)
-      @count = @num.to_a.count
-    
-      # 平均値の取得
-      @wave = @num.sum(:wave) / @count
-      @windy = @num.sum(:windy) / @count
-      @population = @num.sum(:population) / @count
-      @set = @num.sum(:set) / @count
-      @expect = @num.sum(:expected) / @count
+      # 各パラメータが2以外のメッセージの取得
+      
+      if @num.where.not(wave: "2").exists? 
+        @wave = @num.where.not(wave: "2").average(:wave)
+      else
+        @wave == "2"
+      end
+      
+      if @num.where.not(windy: "2").exists? 
+        @windy = @num.where.not(windy: "2").average(:windy)
+      else
+        @windy == "2"
+      end
 
+      if @num.where.not(population: "2").exists? 
+        @population = @num.where.not(population: "2").average(:population)
+      else
+        @population == "2"
+      end
+      
+      if @num.where.not(set: "2").exists? 
+        @set = @num.where.not(set: "2").average(:set)
+      else
+        @set == "2"
+      end
+      
+      if @num.where.not(expected: "2").exists? 
+        @expect = @num.where.not(expected: "2").average(:expected)
+      else
+        @expect == "2"
+      end
+      
       @array = Array[@wave, @windy, @population, @set, @expect]
 
       respond_to do |format|
@@ -93,23 +116,50 @@ class MessagesController < ApplicationController
   def chart
     
     gon.pointname = @point.name
-    # pointの３日間のデータを取得
     @messages = Message.where(point_id: "#{params[:point_id]}")
 
     if @messages.exists? 
+      # pointの３日間のデータを取得
       @num = @messages.where(created_at: (Time.now.midnight - 3.day)..Time.now)
-      @count = @num.to_a.count
-    
-      # 平均値の取得
-      @wave = @num.sum(:wave) / @count
-      @windy = @num.sum(:windy) / @count
-      @population = @num.sum(:population) / @count
-      @set = @num.sum(:set) / @count
-      @expect = @num.sum(:expected) / @count
+   
+
+      # 各パラメータが2以外のメッセージの取得
+      
+      if @num.where.not(wave: "2").exists? 
+        @wave = @num.where.not(wave: "2").average(:wave)
+      else
+        @wave == "2"
+      end
+      
+      if @num.where.not(windy: "2").exists? 
+        @windy = @num.where.not(windy: "2").average(:windy)
+      else
+        @windy == "2"
+      end
+
+      if @num.where.not(population: "2").exists? 
+        @population = @num.where.not(population: "2").average(:population)
+      else
+        @population == "2"
+      end
+      
+      if @num.where.not(set: "2").exists? 
+        @set = @num.where.not(set: "2").average(:set)
+      else
+        @set == "2"
+      end
+      
+      if @num.where.not(expected: "2").exists? 
+        @expect = @num.where.not(expected: "2").average(:expected)
+      else
+        @expect == "2"
+      end
+      
 
       @array = Array[@wave, @windy, @population, @set, @expect]
       # gonに変数の代入
       gon.array = @array
+      # binding.pry
       
       respond_to do |format|
         format.html

@@ -10,22 +10,23 @@
       = link_to user_session_path do
         .user__nav__box__btn
           ログイン 
-    .user__nav__box#face
-      = link_to user_facebook_omniauth_authorize_path, method: :post do
-        .user__nav__box__btn
-          facebookで登録
-          = icon('fab','facebook-square' )
-    .user__nav__box#google
-      = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
-        .user__nav__box__btn
-          Googleで登録
-          = icon('fab','google')
+    -#  google facebook認証はローカルでは確認できていたが、
+    -# .user__nav__box#face
+    -#   = link_to user_facebook_omniauth_authorize_path, method: :post do
+    -#     .user__nav__box__btn
+    -#       facebookで登録
+    -#       = icon('fab','facebook-square' )
+    -# .user__nav__box#google
+    -#   = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
+    -#     .user__nav__box__btn
+    -#       Googleで登録
+    -#       = icon('fab','google')
   .user__can
     .user__can__title
       ・出来る事
     .user__can__content
-      SEAMANでは、ユーザーが波情報を予測し、各Point毎の掲示板に各々のコメントを残すことができます。
-      地形情報からご当地の美味しいご飯情報など、幅広い情報について話していただくことが可能です。
+      SEAMANでは、ユーザーが波情報を予測し、各サーフポイントの掲示板に各々のコメントを残すことができます。
+      地形情報から波情報について話していただくことが可能です。
   .user__use
     .user__use__title
       ・使い方

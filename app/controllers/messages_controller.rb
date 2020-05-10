@@ -55,31 +55,31 @@ class MessagesController < ApplicationController
       if @num.where.not(wave: "2").exists? 
         @wave = @num.where.not(wave: "2").average(:wave)
       else
-        @wave == "2"
+        @wave = 2
       end
       
       if @num.where.not(windy: "2").exists? 
         @windy = @num.where.not(windy: "2").average(:windy)
       else
-        @windy == "2"
+        @windy = 2
       end
 
       if @num.where.not(population: "2").exists? 
         @population = @num.where.not(population: "2").average(:population)
       else
-        @population == "2"
+        @population = 2
       end
       
       if @num.where.not(set: "2").exists? 
         @set = @num.where.not(set: "2").average(:set)
       else
-        @set == "2"
+        @set = 2
       end
       
       if @num.where.not(expected: "2").exists? 
         @expect = @num.where.not(expected: "2").average(:expected)
       else
-        @expect == "2"
+        @expect = 2
       end
       
       @array = Array[@wave, @windy, @population, @set, @expect]
@@ -125,46 +125,47 @@ class MessagesController < ApplicationController
 
       # 各パラメータが2以外のメッセージの取得
       
-      if @num.where.not(wave: "2").exists? 
-        @wave = @num.where.not(wave: "2").average(:wave)
-      else
-        @wave == "2"
-      end
-      
-      if @num.where.not(windy: "2").exists? 
-        @windy = @num.where.not(windy: "2").average(:windy)
-      else
-        @windy == "2"
-      end
+          if @num.where.not(wave: "2").exists? 
+            @wave = @num.where.not(wave: "2").average(:wave)
+          else
+            @wave = 2
+          end
+          
+          if @num.where.not(windy: "2").exists? 
+            @windy = @num.where.not(windy: "2").average(:windy)
+          else
+            @windy = 2
+          end
 
-      if @num.where.not(population: "2").exists? 
-        @population = @num.where.not(population: "2").average(:population)
-      else
-        @population == "2"
-      end
-      
-      if @num.where.not(set: "2").exists? 
-        @set = @num.where.not(set: "2").average(:set)
-      else
-        @set == "2"
-      end
-      
-      if @num.where.not(expected: "2").exists? 
-        @expect = @num.where.not(expected: "2").average(:expected)
-      else
-        @expect == "2"
-      end
+          if @num.where.not(population: "2").exists? 
+            @population = @num.where.not(population: "2").average(:population)
+          else
+            @population = 2
+          end
+          
+          if @num.where.not(set: "2").exists? 
+            @set = @num.where.not(set: "2").average(:set)
+          else
+            @set = 2
+          end
+          
+          if @num.where.not(expected: "2").exists? 
+            @expect = @num.where.not(expected: "2").average(:expected)
+          else
+            @expect = 2
+          end
       
 
       @array = Array[@wave, @windy, @population, @set, @expect]
       # gonに変数の代入
       gon.array = @array
-      # binding.pry
+      
       
       respond_to do |format|
         format.html
         format.json
       end
+
     else
       gon.array = [2,2,2,2,2]
     end

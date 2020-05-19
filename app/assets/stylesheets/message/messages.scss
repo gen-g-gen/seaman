@@ -639,7 +639,7 @@
     z-index: 5;
     height:100vh;
     overflow: scroll;
-    
+    background-color:$blue;
       &__top{
         height:50px;
         width:100%;
@@ -657,6 +657,7 @@
         height: auto;
         width:calc(100% - 2px);
         padding:0px;
+        border: none;
         &__area{
           height:calc(100vh - 140px);;
           padding-bottom:60px;

@@ -26,6 +26,8 @@ Things you may want to cover:
 ## 概要
 サーファーによるサーファのための波情報サイト
 
+youtube: https://www.youtube.com/watch?v=t3mydoC3thg&t=12s
+
 ## 可能なこと
 各県のサーフポイントの情報を一括で確認することができる。
 

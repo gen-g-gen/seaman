@@ -114,13 +114,6 @@ class MessagesController < ApplicationController
     @points = Point.select(:name, :id, :area_id)
   end  
 
-  private
-
-
-  def message_params
-    params.require(:message).permit(:message,:image, :wave, :windy, :population, :set, :expected).merge(user_id: current_user.id,point_id: params[:point_id] )
-  end
-
   def set_point
     @point = Point.find(params[:point_id])
   end
@@ -128,9 +121,11 @@ class MessagesController < ApplicationController
   def set_time
     @time = Time.now
   end
-
-
-
   
-  
+  private
+
+  def message_params
+    params.require(:message).permit(:message,:image, :wave, :windy, :population, :set, :expected).merge(user_id: current_user.id,point_id: params[:point_id] )
+  end
+
 end

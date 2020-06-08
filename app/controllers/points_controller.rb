@@ -12,12 +12,12 @@ class PointsController < ApplicationController
   end
 
   def create
+    #中間テーブル作成(各pointに紐づくユーザを中間テーブルで管理する)
     if user_signed_in?
       @user = current_user
       if @user.user_points.create(point_params)
         redirect_to area_point_messages_path(params[:area_id], params[:point][:point_id])
       else
-        binding.pry
         render :new
       end
     else

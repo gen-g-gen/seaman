@@ -2,26 +2,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
     authorization
-    def get_category_area
-      @category_area = Area.where(prefecture_id: "#{params[:prefecture_id]}")
-      render template: 'devise/registrations/get_category_area'
-    end
-    def get_category_point
-      @category_point = Point.where(area_id: "#{params[:area_id]}")
-      render template: 'devise/registrations/get_category_point'
-    end
+    get_category_area
+    get_category_point
   end
 
   def google_oauth2
     authorization
-    def get_category_area
-      @category_area = Area.where(prefecture_id: "#{params[:prefecture_id]}")
-      render template: 'devise/registrations/get_category_area'
-    end
-    def get_category_point
-      @category_point = Point.where(area_id: "#{params[:area_id]}")
-      render template: 'devise/registrations/get_category_point'
-    end
+    get_category_area
+    get_category_point
   end
 
 
@@ -29,6 +17,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     redirect_to root_path
+  end
+
+  def get_category_area
+    @category_area = Area.where(prefecture_id: params[:prefecture_id])
+    render template: 'devise/registrations/get_category_area'
+  end
+  def get_category_point
+    @category_point = Point.where(area_id: params[:area_id])
+    render template: 'devise/registrations/get_category_point'
   end
 
   private

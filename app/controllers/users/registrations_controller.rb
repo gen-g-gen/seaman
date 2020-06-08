@@ -12,12 +12,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # prefectureが選択された後に動くアクション
     def get_category_area
-      @category_area = Area.where(prefecture_id: "#{params[:prefecture_id]}")
+      @category_area = Area.where(prefecture_id: params[:prefecture_id])
     end
 
     # areaが選択された後に動くアクション
     def get_category_point
-      @category_point = Homepoint.where(area_id: "#{params[:area_id]}")
+      @category_point = Homepoint.where(area_id: params[:area_id])
     end
 
   end

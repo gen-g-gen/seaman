@@ -1,32 +1,11 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # SEAMAN アプリ概要
 ## 概要
 サーファーによるサーファのための波情報サイト
 
 youtube: https://www.youtube.com/watch?v=t3mydoC3thg&t=12s
+ホームページ： https://seaman.tokyo
+mail: test@gmail.com
+pass: 000000
 
 ## 可能なこと
 各県のサーフポイントの情報を一括で確認することができる。

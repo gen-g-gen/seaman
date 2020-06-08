@@ -2,11 +2,10 @@
 ## 概要
 サーファーによるサーファのための波情報サイト
 
-youtube: https://www.youtube.com/watch?v=t3mydoC3thg&t=12s
-/br
-ホームページ： https://seaman.tokyo
-mail: test@gmail.com
-pass: 000000
+youtube: https://www.youtube.com/watch?v=t3mydoC3thg&t=12s  
+ホームページ： https://seaman.tokyo  
+mail: test@gmail.com  
+pass: 000000  
 
 ## 可能なこと
 各県のサーフポイントの情報を一括で確認することができる。
